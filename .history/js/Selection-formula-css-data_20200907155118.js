@@ -372,44 +372,9 @@ const SF_css_data = [
     },
     {
         'id': 55,
-        'question':'アウトラインの表示を(まとめて)設定', // 問題文
-        'answer':'outline', // 解答
-        'explanation': 'アウトラインのスタイル、太さ、色、アウトラインまでの距離をまとめて指定できる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/outline/', //詳細リンク
-    },
-    {
-        'id': 56,
-        'question':'アニメーション設定', // 問題文
-        'answer':'animation', // 解答
-        'explanation': '要素をアニメーション（指定した動き）に変化させる事ができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/animation/', //詳細リンク
-    },
-    {
-        'id': 57,
-        'question':'時間的変化', // 問題文
-        'answer':'transition', // 解答
-        'explanation': '時間や速度を指定したCSSプロパティの値を変化させる事ができる。アニメーションの1つで、カーソルイン（:hover）のタイミングで変化を与えたりできる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/transition/', //詳細リンク
-    },
-    {
-        'id': 58,
-        'question':'変形(回転、拡大・縮小など)', // 問題文
-        'answer':'transform', // 解答
-        'explanation': '要素を変形させる事ができる。アニメーションとの組み合わせで要素が回り続けたり、拡大縮小などを繰り返すことができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/transform/', //詳細リンク
-    },
-    {
-        'id': 59,
-        'question':'flexアイテムの垂直方向の揃え方の設定', // 問題文
-        'answer':'align-items', // 解答
-        'explanation': 'flexbox（flexコンテナ内のflexアイテム）の垂直方向の揃え方を指定することができる。flexboxはCSS3で導入されたレイアウトモード。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/align-items/', //詳細リンク
-    },
-    {
-        'id': 60,
-        'question':'flexアイテムの水平方向の揃え方の設定', // 問題文
-        'answer':'justify-content', // 解答
-        'explanation': 'flexbox（flexコンテナ内のflexアイテム）の水平方向の揃え方を指定することができる。flexboxはCSS3で導入されたレイアウトモード。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/justify-content/', //詳細リンク
+        'question':'要素に影を付ける', // 問題文
+        'answer':'box-shadow', // 解答
+        'explanation': '要素に影を付けることができる。', // 解説
+        'url':'https://web-designer.cman.jp/css_ref/abc_list/box-shadow/', //詳細リンク
     },
 ]

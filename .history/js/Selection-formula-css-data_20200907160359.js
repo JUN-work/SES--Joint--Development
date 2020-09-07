@@ -400,16 +400,16 @@ const SF_css_data = [
     },
     {
         'id': 59,
-        'question':'flexアイテムの垂直方向の揃え方の設定', // 問題文
+        'question':'flexアイテムの垂直方向の揃え方', // 問題文
         'answer':'align-items', // 解答
         'explanation': 'flexbox（flexコンテナ内のflexアイテム）の垂直方向の揃え方を指定することができる。flexboxはCSS3で導入されたレイアウトモード。', // 解説
         'url':'https://web-designer.cman.jp/css_ref/abc_list/align-items/', //詳細リンク
     },
     {
         'id': 60,
-        'question':'flexアイテムの水平方向の揃え方の設定', // 問題文
-        'answer':'justify-content', // 解答
-        'explanation': 'flexbox（flexコンテナ内のflexアイテム）の水平方向の揃え方を指定することができる。flexboxはCSS3で導入されたレイアウトモード。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/justify-content/', //詳細リンク
+        'question':'flexアイテムの垂直方向の揃え方(複数行)', // 問題文
+        'answer':'align-content', // 解答
+        'explanation': 'flexbox（flexコンテナ内のflexアイテム）の垂直方向の揃え方(複数行)を指定することができる。flexboxはCSS3で導入されたレイアウトモード。', // 解説
+        'url':'https://web-designer.cman.jp/css_ref/abc_list/align-content/', //詳細リンク
     },
 ]
