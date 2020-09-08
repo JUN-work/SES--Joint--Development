@@ -1,3 +1,37 @@
+<?php
+ 
+session_start();  //セッションを使う
+ 
+//入力チェック
+$message = '';
+if(isset($_POST['confirm'])){  //確認ボタンを押してポストしたものなら
+    $error_flg = false;
+    //名前の必須入力チェック
+    if ($_POST['name'] === ''){
+        $message .= "お名前は必ず入力してください<br>";
+        $error_flg = true;
+    }
+    //名前の必須入力チェック
+    if ($_POST['mail'] === ''){
+        $message .= "メールアドレスは必ず入力してください<br>";
+        $error_flg = true;
+    }
+    //内容の必須入力チェック
+    if ($_POST['content'] === ''){
+        $message .= "お問い合わせ内容は必ず入力してください<br>";
+        $error_flg = true;
+    }
+ 
+    //エラーが無ければ入力内容をセッションに保存して確認画面へ
+    if (!$error_flg){
+        $_SESSION['inquiry'] = $_POST;
+        header('Location: confirm.php');
+        exit();
+    }
+}
+ 
+?>
+
 <!doctype html>
 <html>
 
@@ -91,31 +125,32 @@
         <h2 class="sample-subtitle">MAIL FORM</h2>
         <p class="font-weight-bold h5">Tell us about yourself</p>
         <p>Whether you have questions or you would just like to say hello, contact us.</p>
-
-        <form class="col-lg-6 mr-lg-auto px-0" action="./confirm_contact.php">
+        
+        <p style="color: red"><?php echo $message ?></p>  <!-- エラーメッセージ表示 -->
+        <form class="col-lg-6 mr-lg-auto px-0" method="post" action="./index.php"><!-- action先つなげること -->
           <div class="form-group">
             <label for="formName">YOUR NAME <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="formName">
+            <input type="text" class="form-control" id="formName" name="formName">
           </div>
           <div class="form-group">
             <label for="formEmail1">YOUR EMAIL ADDRESS <span class="text-danger">*</span></label>
-            <input type="email" class="form-control" id="formEmail1">
+            <input type="email" class="form-control" id="formEmail1" name="formEmail1">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
           </div>
           <div class="form-group">
             <label for="formSubject">SUBJECT <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="formSubject">
+            <input type="text" class="form-control" id="formSubject" name="formSubject">
           </div>
           <div class="form-group">
             <label for="formTel">YOUR PHONE NUMBER <span class="text-danger">*</span></label>
-            <input type="tel" class="form-control" id="formTel">
+            <input type="tel" class="form-control" id="formTel" name="formTel">
           </div>
           <div class="form-group">
             <label for="formContent">HOW CAN WE HELP YOU? <span class="text-danger">*</span></label>
-            <textarea class="form-control" id="formContent" rows="5"></textarea>
+            <textarea class="form-control" id="formContent" name="formContent" rows="5"></textarea>
           </div>
           
-          <button type="submit" class="btn btn-primary">確認</button>
+          <button type="submit" class="btn btn-primary" name="confirm">確認</button>
           
 
         </form>
