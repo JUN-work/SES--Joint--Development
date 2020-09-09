@@ -419,7 +419,6 @@ const SF_css_data = [
         'explanation': 'flexbox（flexコンテナ内のflexアイテム）の水平方向の揃え方を指定することができる。flexboxはCSS3で導入されたレイアウトモード。', // 解説
         'url':'https://web-designer.cman.jp/css_ref/abc_list/justify-content/', //詳細リンク
     },
-    // ここからは中級以上のレベル、または使用頻度少なめのもの
     {
         'id': 61,
         'question':'グリッドコンテナをまとめて指定', // 問題文
@@ -611,9 +610,9 @@ const SF_css_data = [
     },
     {
         'id': 88,
-        'question':'圏点(「、」「・」「◦」など)の位置を指定', // 問題文
-        'answer':'text-emphasis-position', // 解答
-        'explanation': '圏点(「、」「・」「◦」など)の位置を指定することができる。', // 解説
+        'question':'圏点(「、」「・」「◦」など)の色を指定', // 問題文
+        'answer':'text-emphasis-color', // 解答
+        'explanation': '圏点(「、」「・」「◦」など)の色を指定することができる。', // 解説
         'url':'https://web-designer.cman.jp/css_ref/abc_list/text-emphasis/', //詳細リンク
     },
     {
@@ -655,49 +654,14 @@ const SF_css_data = [
         'id': 94,
         'question':'リストマークの画像', // 問題文
         'answer':'list-style-image', // 解答
-        'explanation': 'リストマークの画像を指定することができる。', // 解説
+        'explanation': 'リストマークのを指定することができる。', // 解説
         'url':'https://web-designer.cman.jp/css_ref/abc_list/list-style/', //詳細リンク
     },
     {
         'id': 95,
-        'question':'リストマークの種類', // 問題文
-        'answer':'list-style-type', // 解答
-        'explanation': 'リストマークの種類を指定することができる。', // 解説
+        'question':'リストマークの画像', // 問題文
+        'answer':'list-style-image', // 解答
+        'explanation': 'リストマークのを指定することができる。', // 解説
         'url':'https://web-designer.cman.jp/css_ref/abc_list/list-style/', //詳細リンク
-    },
-    {
-        'id': 96,
-        'question':'リストマークの位置', // 問題文
-        'answer':'list-style-position', // 解答
-        'explanation': 'リストマークの位置を指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/list-style/', //詳細リンク
-    },
-    {
-        'id': 97,
-        'question':'アウトラインのスタイル', // 問題文
-        'answer':'outline-style', // 解答
-        'explanation': 'アウトラインのスタイルを指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/outline/', //詳細リンク
-    },
-    {
-        'id': 98,
-        'question':'アウトラインの太さ', // 問題文
-        'answer':'outline-width', // 解答
-        'explanation': 'アウトラインの太さを指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/outline/', //詳細リンク
-    },
-    {
-        'id': 99,
-        'question':'アウトラインの色', // 問題文
-        'answer':'outline-color', // 解答
-        'explanation': 'アウトラインの色を指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/outline/', //詳細リンク
-    },
-    {
-        'id': 100,
-        'question':'アウトラインまでの距離', // 問題文
-        'answer':'outline-color', // 解答
-        'explanation': 'アウトラインまでの距離を指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/outline/', //詳細リンク
     },
 ]
