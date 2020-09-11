@@ -274,93 +274,9 @@ const SF_JavaScript_data = [
     },
     {
         'id': 39,
-        'question':'文字列の分割', // 問題文
-        'answer':'split', // 解答
-        'explanation': 'ある文字列を、指定した区切り文字で分割し、配列にすることができる。', // 解説
-        'url':'https://techacademy.jp/magazine/14637', //詳細リンク
-    },
-    {
-        'id': 40,
-        'question':'文字列の検索', // 問題文
-        'answer':'search', // 解答
-        'explanation': '文字列の検索をキーワードで指定したり、正規表現を使った検索も可能。', // 解説
-        'url':'https://www.sejuku.net/blog/21049', //詳細リンク
-    },
-    {
-        'id': 41,
-        'question':'送信処理をコントロール', // 問題文
-        'answer':'submit', // 解答
-        'explanation': '送信処理をコントロールすることができる。ただし、name属性値を「submit」と記述してしまうとエラーになるという点には注意。', // 解説
-        'url':'https://www.sejuku.net/blog/28720', //詳細リンク
-    },
-    {
-        'id': 42,
-        'question':'localStorageにデータを保存する', // 問題文
-        'answer':'localStorage.setItem', // 解答
-        'explanation': 'localStorageにデータを保存する。', // 解説
-        'url':'https://www.tam-tam.co.jp/tipsnote/javascript/post5978.html', //詳細リンク
-    },
-    {
-        'id': 43,
-        'question':'日付やJSONなどのデータを文字列に変換する', // 問題文
-        'answer':'parse', // 解答
-        'explanation': 'Date.parse()で経過時間を取得する。JSON.parse()でJSONをエンコードする。parseIntで文字列を数値に変換する。', // 解説
-        'url':'https://www.sejuku.net/blog/61678', //詳細リンク
-    },
-    {
-        'id': 44,
-        'question':'JSONオブジェクトにエンコードされたものを文字列に戻す', // 問題文
-        'answer':'JSON.stringify', // 解答
-        'explanation': 'JSONオブジェクトにエンコードされたものを元の形式に戻す。', // 解説
-        'url':'https://www.sejuku.net/blog/79911', //詳細リンク
-    },
-    {
-        'id': 45,
-        'question':'現在の反復を終了して次の回のループを実行', // 問題文
-        'answer':'continue', // 解答
-        'explanation': 'for文やwhile文などのループの中で、現在の反復を終了して次の回のループを実行するもの。または、ループの中で1回とばしをするためのもの。', // 解説
-        'url':'https://techacademy.jp/magazine/29967', //詳細リンク
-    },
-    {
-        'id': 46,
-        'question':'小数点以下の値を切り捨てた結果を返す', // 問題文
-        'answer':'Math.floor', // 解答
-        'explanation': '引数に指定した値の切り捨てを計算して結果を返す。正の値の場合は引数よりも小さい最大の整数を返す。', // 解説
-        'url':'https://www.javadrive.jp/javascript/math_class/index5.html', //詳細リンク
-    },
-    {
-        'id': 46,
-        'question':'0〜1未満までの小数による乱数を生成', // 問題文
-        'answer':'Math.random', // 解答
-        'explanation': '0〜1未満（1は入らない）までの小数による乱数を生成することができる。任意の範囲における乱数生成も可能。', // 解説
-        'url':'https://www.sejuku.net/blog/22432', //詳細リンク
-    },
-    {
-        'id': 47,
-        'question':'オブジェクトのプロパティを取得', // 問題文
-        'answer':'Object.keys', // 解答
-        'explanation': 'オブジェクトのプロパティを配列でまとめて取得できる。', // 解説
-        'url':'https://www.sejuku.net/blog/64361', //詳細リンク
-    },
-    {
-        'id': 48,
-        'question':'文字列を分割・任意の箇所を抽出', // 問題文
-        'answer':'substring', // 解答
-        'explanation': 'Stringオブジェクトの組み込みメソッドとして用意されており、文字列を分割したり任意の箇所を抽出したりする際によく利用される。', // 解説
-        'url':'https://www.sejuku.net/blog/25730', //詳細リンク
-    },
-    {
-        'id': 49,
-        'question':'任意のHTML要素を検出・取得', // 問題文
-        'answer':'querySelector', // 解答
-        'explanation': 'JavaScriptから任意のHTML要素を検出・取得することができる。id属性値・class属性値などを意識せずにjQuery感覚でHTML要素をセレクタ指定することができる。', // 解説
-        'url':'https://www.sejuku.net/blog/70581', //詳細リンク
-    },
-    {
-        'id': 50,
-        'question':'ローカルストレージから値を取り出し、変数に代入', // 問題文
-        'answer':'localStorage.getItem', // 解答
-        'explanation': 'ローカルストレージから値を取り出し、変数に代入する。', // 解説
-        'url':'https://www.pazru.net/html5/WebStorage/010.html', //詳細リンク
+        'question':'Elementの一番上からのスクロール量をピクセル単位で設定や取得をする', // 問題文
+        'answer':'scrollTop', // 解答
+        'explanation': 'Elementオブジェクトのプロパティ。Elementの一番上からのスクロール量をピクセル単位で設定や取得できる。', // 解説
+        'url':'https://techacademy.jp/magazine/32976', //詳細リンク
     },
 ]

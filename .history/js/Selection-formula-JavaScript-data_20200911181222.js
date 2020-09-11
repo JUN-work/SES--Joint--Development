@@ -351,16 +351,9 @@ const SF_JavaScript_data = [
     },
     {
         'id': 49,
-        'question':'任意のHTML要素を検出・取得', // 問題文
-        'answer':'querySelector', // 解答
-        'explanation': 'JavaScriptから任意のHTML要素を検出・取得することができる。id属性値・class属性値などを意識せずにjQuery感覚でHTML要素をセレクタ指定することができる。', // 解説
-        'url':'https://www.sejuku.net/blog/70581', //詳細リンク
-    },
-    {
-        'id': 50,
-        'question':'ローカルストレージから値を取り出し、変数に代入', // 問題文
-        'answer':'localStorage.getItem', // 解答
-        'explanation': 'ローカルストレージから値を取り出し、変数に代入する。', // 解説
-        'url':'https://www.pazru.net/html5/WebStorage/010.html', //詳細リンク
+        'question':'自身の列挙可能な文字列プロパティのすべての[key, value] ペアの配列を返す', // 問題文
+        'answer':'Object.entries', // 解答
+        'explanation': '指定したオブジェクトの自身の列挙可能な文字列プロパティのすべての [key, value] ペアを含む配列を返す。', // 解説
+        'url':'https://www.sejuku.net/blog/22432', //詳細リンク
     },
 ]

@@ -335,32 +335,4 @@ const SF_JavaScript_data = [
         'explanation': '0〜1未満（1は入らない）までの小数による乱数を生成することができる。任意の範囲における乱数生成も可能。', // 解説
         'url':'https://www.sejuku.net/blog/22432', //詳細リンク
     },
-    {
-        'id': 47,
-        'question':'オブジェクトのプロパティを取得', // 問題文
-        'answer':'Object.keys', // 解答
-        'explanation': 'オブジェクトのプロパティを配列でまとめて取得できる。', // 解説
-        'url':'https://www.sejuku.net/blog/64361', //詳細リンク
-    },
-    {
-        'id': 48,
-        'question':'文字列を分割・任意の箇所を抽出', // 問題文
-        'answer':'substring', // 解答
-        'explanation': 'Stringオブジェクトの組み込みメソッドとして用意されており、文字列を分割したり任意の箇所を抽出したりする際によく利用される。', // 解説
-        'url':'https://www.sejuku.net/blog/25730', //詳細リンク
-    },
-    {
-        'id': 49,
-        'question':'任意のHTML要素を検出・取得', // 問題文
-        'answer':'querySelector', // 解答
-        'explanation': 'JavaScriptから任意のHTML要素を検出・取得することができる。id属性値・class属性値などを意識せずにjQuery感覚でHTML要素をセレクタ指定することができる。', // 解説
-        'url':'https://www.sejuku.net/blog/70581', //詳細リンク
-    },
-    {
-        'id': 50,
-        'question':'ローカルストレージから値を取り出し、変数に代入', // 問題文
-        'answer':'localStorage.getItem', // 解答
-        'explanation': 'ローカルストレージから値を取り出し、変数に代入する。', // 解説
-        'url':'https://www.pazru.net/html5/WebStorage/010.html', //詳細リンク
-    },
 ]
