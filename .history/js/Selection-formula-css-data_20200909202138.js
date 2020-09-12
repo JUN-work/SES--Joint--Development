@@ -419,7 +419,6 @@ const SF_css_data = [
         'explanation': 'flexbox（flexコンテナ内のflexアイテム）の水平方向の揃え方を指定することができる。flexboxはCSS3で導入されたレイアウトモード。', // 解説
         'url':'https://web-designer.cman.jp/css_ref/abc_list/justify-content/', //詳細リンク
     },
-    // ここからは中級以上のレベル、または使用頻度少なめのもの
     {
         'id': 61,
         'question':'グリッドコンテナをまとめて指定', // 問題文
@@ -611,9 +610,9 @@ const SF_css_data = [
     },
     {
         'id': 88,
-        'question':'圏点(「、」「・」「◦」など)の位置を指定', // 問題文
-        'answer':'text-emphasis-position', // 解答
-        'explanation': '圏点(「、」「・」「◦」など)の位置を指定することができる。', // 解説
+        'question':'圏点(「、」「・」「◦」など)の色を指定', // 問題文
+        'answer':'text-emphasis-color', // 解答
+        'explanation': '圏点(「、」「・」「◦」など)の色を指定することができる。', // 解説
         'url':'https://web-designer.cman.jp/css_ref/abc_list/text-emphasis/', //詳細リンク
     },
     {
