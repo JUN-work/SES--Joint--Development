@@ -264,14 +264,7 @@ const SF_css_data = [
         'answer':'padding-top', // 解答
         'explanation': '上パディングを指定することができる。 上パディングは、要素の内側の内容までの上からの余白のこと。', // 解説
         'url':'https://web-designer.cman.jp/css_ref/abc_list/padding-top/', //詳細リンク
-    },
-    {
-        'id': 39,
-        'question':'文字の色', // 問題文
-        'answer':'color', // 解答
-        'explanation': '文字の色を指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/color/', //詳細リンク
-    },
+    },// id39抜け
     {
         'id': 40,
         'question':'背景の設定(背景をまとめて設定)', // 問題文
@@ -419,7 +412,6 @@ const SF_css_data = [
         'explanation': 'flexbox（flexコンテナ内のflexアイテム）の水平方向の揃え方を指定することができる。flexboxはCSS3で導入されたレイアウトモード。', // 解説
         'url':'https://web-designer.cman.jp/css_ref/abc_list/justify-content/', //詳細リンク
     },
-    // ここからは中級以上のレベル、または使用頻度少なめのもの
     {
         'id': 61,
         'question':'グリッドコンテナをまとめて指定', // 問題文
@@ -559,145 +551,5 @@ const SF_css_data = [
         'answer':'flex-basis', // 解答
         'explanation': 'flexbox（flexコンテナ内のflexアイテム）の幅を調整を指定することができる。flexboxはCSS3で導入されたレイアウトモード。', // 解説
         'url':'https://web-designer.cman.jp/css_ref/abc_list/flex-basis/', //詳細リンク
-    },
-    {
-        'id': 81,
-        'question':'flexアイテムの垂直位置指定', // 問題文
-        'answer':'align-self', // 解答
-        'explanation': 'flexbox（flexコンテナ内のflexアイテム）の垂直（縦）方向の位置指定することができる。flexboxはCSS3で導入されたレイアウトモード。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/flex-basis/', //詳細リンク
-    },
-    {
-        'id': 82,
-        'question':'flexアイテムの垂直方向の揃え方(複数行)', // 問題文
-        'answer':'align-content', // 解答
-        'explanation': 'flexbox（flexコンテナ内のflexアイテム）の垂直方向の揃え方(複数行)を指定することができる。flexboxはCSS3で導入されたレイアウトモード。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/flex-basis/', //詳細リンク
-    },
-    {
-        'id': 83,
-        'question':'文字の装飾線の位置・種類・色をまとめて指定', // 問題文
-        'answer':'text-decoration', // 解答
-        'explanation': '文字の装飾線の位置、種類、色をまとめて指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/text-decoration/', //詳細リンク
-    },
-    {
-        'id': 84,
-        'question':'文字の装飾線の位置指定', // 問題文
-        'answer':'text-decoration-line', // 解答
-        'explanation': '文字の装飾線の位置を指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/text-decoration/', //詳細リンク
-    },
-    {
-        'id': 85,
-        'question':'文字の装飾線の色指定', // 問題文
-        'answer':'text-decoration-color', // 解答
-        'explanation': '文字の装飾線の色を指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/text-decoration/', //詳細リンク
-    },
-    {
-        'id': 86,
-        'question':'圏点(「、」「・」「◦」など)の色、塗りつぶしと種類ををまとめて指定', // 問題文
-        'answer':'text-emphasis', // 解答
-        'explanation': '圏点(「、」「・」「◦」など)の色、塗りつぶしと種類ををまとめて指定することができる。省略した値は、それぞれの初期値が設定される。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/text-emphasis/', //詳細リンク
-    },
-    {
-        'id': 87,
-        'question':'圏点(「、」「・」「◦」など)の色を指定', // 問題文
-        'answer':'text-emphasis-color', // 解答
-        'explanation': '圏点(「、」「・」「◦」など)の色を指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/text-emphasis/', //詳細リンク
-    },
-    {
-        'id': 88,
-        'question':'圏点(「、」「・」「◦」など)の位置を指定', // 問題文
-        'answer':'text-emphasis-position', // 解答
-        'explanation': '圏点(「、」「・」「◦」など)の位置を指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/text-emphasis/', //詳細リンク
-    },
-    {
-        'id': 89,
-        'question':'圏点(「、」「・」「◦」など)の塗りつぶしと種類を指定', // 問題文
-        'answer':'text-emphasis-style', // 解答
-        'explanation': '圏点(「、」「・」「◦」など)の塗りつぶしと種類を指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/text-emphasis/', //詳細リンク
-    },
-    {
-        'id': 90,
-        'question':'１行目の字下げ', // 問題文
-        'answer':'text-indent', // 解答
-        'explanation': '段落の最初の行のインデント（字下げ）幅を指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/text-indent/', //詳細リンク
-    },
-    {
-        'id': 91,
-        'question':'スペース・改行の表示方法', // 問題文
-        'answer':'white-space', // 解答
-        'explanation': 'スペースや改行の表示方法を指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/white-space/', //詳細リンク
-    },
-    {
-        'id': 92,
-        'question':'英単語の間隔', // 問題文
-        'answer':'word-spacing', // 解答
-        'explanation': '英単語の間隔を指定することができる。日本語ではは有効とはなりませんが、あえて半角スペースを使用すると、日本語でも単語間隔が有効となる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/word-spacing/', //詳細リンク
-    },
-    {
-        'id': 93,
-        'question':'リストマークのデザイン(種類、位置、画像)をまとめて指定', // 問題文
-        'answer':'list-style', // 解答
-        'explanation': 'リストマークの種類、位置、画像をまとめて指定することができる。種類と画像を両方指定した場合は、画像が優先される。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/list-style/', //詳細リンク
-    },
-    {
-        'id': 94,
-        'question':'リストマークの画像', // 問題文
-        'answer':'list-style-image', // 解答
-        'explanation': 'リストマークの画像を指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/list-style/', //詳細リンク
-    },
-    {
-        'id': 95,
-        'question':'リストマークの種類', // 問題文
-        'answer':'list-style-type', // 解答
-        'explanation': 'リストマークの種類を指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/list-style/', //詳細リンク
-    },
-    {
-        'id': 96,
-        'question':'リストマークの位置', // 問題文
-        'answer':'list-style-position', // 解答
-        'explanation': 'リストマークの位置を指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/list-style/', //詳細リンク
-    },
-    {
-        'id': 97,
-        'question':'アウトラインのスタイル', // 問題文
-        'answer':'outline-style', // 解答
-        'explanation': 'アウトラインのスタイルを指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/outline/', //詳細リンク
-    },
-    {
-        'id': 98,
-        'question':'アウトラインの太さ', // 問題文
-        'answer':'outline-width', // 解答
-        'explanation': 'アウトラインの太さを指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/outline/', //詳細リンク
-    },
-    {
-        'id': 99,
-        'question':'アウトラインの色', // 問題文
-        'answer':'outline-color', // 解答
-        'explanation': 'アウトラインの色を指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/outline/', //詳細リンク
-    },
-    {
-        'id': 100,
-        'question':'アウトラインまでの距離', // 問題文
-        'answer':'outline-color', // 解答
-        'explanation': 'アウトラインまでの距離を指定することができる。', // 解説
-        'url':'https://web-designer.cman.jp/css_ref/abc_list/outline/', //詳細リンク
     },
 ]
