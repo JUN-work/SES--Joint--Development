@@ -77,18 +77,13 @@
 <!----------------------------------------------->
 
 <main>
-  <!----------------------------------------------->
-  <!--トップの写真部分を消去-->
-  <!----------------------------------------------->
   <article class="py-5">
     <section class="py-5">
       <div class="container">
-        <h2 class="sample-subtitle">送信完了しました。</h2>
-        
+        <h2 class="sample-subtitle pb-5">送信完了しました。</h2>
         <a href="../index.html">
           <button type="submit" class="btn btn-primary">トップに戻る</button>
         </a>
-        
       </div><!-- /.container -->
     </section>
   </article>

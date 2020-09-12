@@ -81,9 +81,6 @@ session_start();  //セッションを使う
 <!----------------------------------------------->
 
 <main>
-  <!----------------------------------------------->
-  <!--トップの写真部分を消去-->
-  <!----------------------------------------------->
   <article class="py-5">
     <section class="py-5">
       <div class="container">
@@ -92,28 +89,28 @@ session_start();  //セッションを使う
         <form class="col-lg-6 mr-lg-auto px-0" method="post" action="submit_contact.php">
           <div class="form-group">
             <label for="formName">お名前 <span class="text-danger">*</span></label><br>
-            <?php echo htmlspecialchars($_SESSION['inquiry']['formName']); ?>
+            <?php echo htmlspecialchars($_SESSION['inquiry']['formName'],ENT_QUOTES, 'UTF-8'); ?>
           </div>
           <div class="form-group">
             <label for="formEmail1">メールアドレス <span class="text-danger">*</span></label><br>
-            <?php echo htmlspecialchars($_SESSION['inquiry']['formEmail1']); ?>
+            <?php echo htmlspecialchars($_SESSION['inquiry']['formEmail1'],ENT_QUOTES, 'UTF-8'); ?>
           </div>
           <div class="form-group">
             <label for="formSubject">タイトル <span class="text-danger">*</span></label><br>
-            <?php echo htmlspecialchars($_SESSION['inquiry']['formSubject']); ?>
+            <?php echo htmlspecialchars($_SESSION['inquiry']['formSubject'],ENT_QUOTES, 'UTF-8'); ?>
           </div>
           <div class="form-group">
             <label for="formTel">電話番号 <span class="text-danger">*</span></label><br>
-            <?php echo htmlspecialchars($_SESSION['inquiry']['formTel']); ?>
+            <?php echo htmlspecialchars($_SESSION['inquiry']['formTel'],ENT_QUOTES, 'UTF-8'); ?>
           </div>
           <div class="form-group">
             <label for="formContent">お問い合わせ内容 <span class="text-danger">*</span></label><br>
-            <?php echo htmlspecialchars($_SESSION['inquiry']['formContent']); ?>
+            <?php echo htmlspecialchars($_SESSION['inquiry']['formContent'],ENT_QUOTES, 'UTF-8'); ?>
           </div>
-          <input type="submit" class="btn btn-primary" name="submit" value="送信">
+          <input type="submit" class="btn btn-primary" name="submit" value="　送信　">
         </form>
 
-        <div><a href="index.php?action=rewrite">&laquo;&nbsp;書き直す</a><!--戻るボタン-->
+        <div><button class="btn btn-secondary mt-2"><a href="index.php?action=rewrite" class="text-light">書き直す</a></button><!--戻るボタン-->
       </div><!-- /.container -->
     </section>
   </article>

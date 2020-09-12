@@ -8,27 +8,27 @@ if(isset($_POST['confirm'])){ //確認ボタンを押してポストしたもの
     $error_flg = false;
     //名前の必須入力チェック
     if ($_POST['formName'] === ''){
-        $message .= "お名前が入力されていません<br>";
+        $message .= "お名前が入力されていません。<br>";
         $error_flg = true;
     }
     //メールアドレスの必須入力チェック
     if ($_POST['formEmail1'] === ''){
-        $message .= "メールアドレスが入力されていません<br>";
+        $message .= "メールアドレスが入力されていません。<br>";
         $error_flg = true;
     }
-    //件名の必須入力チェック
+    //タイトルの必須入力チェック
     if ($_POST['formSubject'] === ''){
-      $message .= "タイトルが入力されていません<br>";
+      $message .= "タイトルが入力されていません。<br>";
       $error_flg = true;
     }
     //電話番号の必須入力チェック
     if ($_POST['formTel'] === ''){
-      $message .= "電話番号が入力されていません<br>";
+      $message .= "電話番号が入力されていません。<br>";
       $error_flg = true;
     }
     //内容の必須入力チェック
     if ($_POST['formContent'] === ''){
-        $message .= "お問い合わせ内容が入力されていません<br>";
+        $message .= "お問い合わせ内容が入力されていません。<br>";
         $error_flg = true;
     }
  
