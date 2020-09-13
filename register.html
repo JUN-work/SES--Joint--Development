@@ -15,6 +15,10 @@
             margin: 20px 0;
         }
 
+        label {
+            margin: 0;
+        }
+
         .head h1 {
             padding-left: 20px;
             margin: 16px;
@@ -39,7 +43,7 @@
         }
 
         .form-wrapper {
-            padding: 30px 45px;
+            padding: 30px 46px;
         }
     </style>
 </head>
@@ -52,23 +56,21 @@
         <div class="form-wrapper">
             <p>次のフォームに必要事項をご記入ください</p>
             <form action="" method="">
-                <dl>
-                    <dt>ニックネーム<span class="text-danger"> *</span></dt>
-                    <dd>
-                        <input type="text" name="name" class="form-control">
-                    </dd>
-                    <dt>メールアドレス<span class="text-danger"> *</span></dt>
-                    <dd>
-                        <input type="text" name="email" class="form-control">
-                    <dt>パスワード<span class="text-danger"> *</span></dt>
-                    <dd>
-                        <input type="password" name="password" class="form-control">
-                    </dd>
-                </dl>
+                <div class="form-group">
+                    <label for="name">ニックネーム <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">ニックネーム <span class="text-danger">*</span></label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
                 <input type="submit" value="Submit" class="btn btn-light btn-block yellow-btn">
             </form>
             <div>
-                <!-- 区切るための横線 -->
                 <hr>
             </div>
             <div>
