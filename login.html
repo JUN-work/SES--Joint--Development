@@ -11,13 +11,9 @@
             font-size: 18px;
         }
 
-        hr {
-            margin: 20px 0;
-        }
-
         .head h1 {
             padding-left: 20px;
-            margin: 16px;
+            margin: 10px;
         }
 
         .yellow-btn {
@@ -25,7 +21,7 @@
         }
 
         .wrapper {
-            width: 680px;
+            width: 700px;
             margin: 40px auto;
             border-radius: 5px;
             background: #EEEEEE;
@@ -39,7 +35,7 @@
         }
 
         .form-wrapper {
-            padding: 30px 45px;
+            padding: 30px 46px;
         }
     </style>
 </head>
@@ -56,27 +52,29 @@
                 <p>&raquo;<a href="register.html">入会手続きをする</a></p>
             </div>
             <form action="" method="">
-                <dl>
-                    <dt>メールアドレス<span class="text-danger"> *</span></dt>
-                    <dd>
-                        <input type="text" class="form-control">
-                    </dd>
-                    <dt>パスワード<span class="text-danger"> *</span></dt>
-                    <dd>
-                        <input type="password" class="form-control">
-                    </dd>
-                    <!-- チェックつけるとcookieで情報を保持して次回ログイン時メールアドレスを表示、パスワードのみでログインできるように。 -->
-                    <dt>ログイン情報の記録</dt>
-                    <dd>
-                        <input id="save" type="checkbox">
-                        <label for="save">次回からは自動的にログインする</label>
-                    </dd>
-                </dl>
+
+                <div class="form-group">
+                    <label for="email" class="m-0">メールアドレス <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="email" name="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="m-0">パスワード <span class="text-danger">*</span></label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+
+                <div class="mb-3">
+                    <p class="m-0">ログイン情報の記録</p>
+                    <div class="form-check">
+                        <input class="form-check-input" id="save" type="checkbox">
+                        <label class="form-check-label" for="save">次回からは自動的にログインする</label>
+                    </div>
+                </div>
+
                 <input type="submit" value="Log in" class="btn btn-light btn-block yellow-btn">
             </form>
             <div>
-                <!-- 区切るための横線 -->
-                <hr>
+                <hr class="my-3">
             </div>
             <div>
                 <a href="index.html" class="btn btn-danger btn-block">戻る</a>
