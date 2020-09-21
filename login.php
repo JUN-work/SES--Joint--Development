@@ -11,7 +11,7 @@ if ($_COOKIE['email'] !== '') {
 if (!empty($_POST)) {
     // email上書き。クッキーの値を更新
     $email = $_POST['email'];
-    // emailとパスワードに値入っていたら
+    // emailとパスワード両方に値入っていたら
     if ($_POST['email'] !== '' && $_POST['password'] !== '') {
         $login = $dbh->prepare('SELECT * FROM members WHERE email=? AND password=?');
         $login->execute(array(
@@ -19,12 +19,13 @@ if (!empty($_POST)) {
             // sha1関数でパスワードをハッシュ化
             sha1($_POST['password'])
         ));
+        // fetchメソッドを使って$memberに結果セット取得
         $member = $login->fetch();
 
         // ログインに成功している場合は次の処理に
         if ($member) {
             $_SESSION['id'] = $member['id'];
-            // 今の時間をセッションに
+            // ログイン時の時間をセッションに
             $_SESSION['time'] = time();
 
             // クッキー入ったデータを四日間保持
@@ -33,7 +34,7 @@ if (!empty($_POST)) {
             }
 
             // ログイン成功したらトップページへ
-            header('Location: index.php');
+            header('Location: index.html');
             exit();
         } else {
             $error['login'] = 'failed';
