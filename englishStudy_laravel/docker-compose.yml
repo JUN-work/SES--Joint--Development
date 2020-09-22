@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  php:
+    build: ./docker/php
+    volumes:
+      - ./workspace/:/var/www
+
+  nginx:
+    image: nginx
+    ports:
+    - 8000:80
+    volumes:
+    - ./workspace/:/var/www
+    - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+    - php
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mysql
+      MYSQL_USER: default
+      MYSQL_PASSWORD: root
+      TZ: 'Asia/Tokyo'
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+    - ./docker/mysql/data:/var/lib/mysql
+    - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    - ./docker/mysql/sql:/docker-entrypoint-initdb.d
+    ports:
+    - 3306:3306
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+      - PMA_USER=default
+      - PMA_PASSWORD=root
+    links:
+      - mysql
+    ports:
+      - 8080:80
+    volumes:
+      - /sessions
