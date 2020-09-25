@@ -1,4 +1,5 @@
 <?php
+//DBに登録されている問題(id=1〜10)をランダムで1問選択
 if(!isset($rand)){
   $rand=range(1,10);
   shuffle($rand);
@@ -7,6 +8,7 @@ if(!isset($rand)){
     }
   }
 
+//DB情報の設定・接続チェック
   define('DB_HOST', 'mysql');
   define('DB_USER', 'default');
   define('DB_PASSWORD', 'root');
@@ -21,6 +23,7 @@ if(!isset($rand)){
     exit;
   }
 
+//選択された問題の情報を取得、取得した問題のカラムに入っている答え(answer)を正解としてセット。
 $id=$mondai['1'];
 $sql="SELECT question,answer FROM js_questions WHERE id=:id;";
 $stmt=$pdo->prepare($sql);
@@ -34,6 +37,7 @@ $_SESSION['seikai']['id']=$id;
 $_SESSION['seikai']['question']=$question;
 $_SESSION['seikai']['answer']=$answer;
 
+//正解以外の選択肢を生成。
 $rand=range(1,10);
 shuffle($rand);
 for($i=1;$i<=3;$i++){
@@ -48,9 +52,11 @@ for($i=1;$i<=3;$i++){
   }
 }
 
+//$answer['0']に正解を格納後、選択肢をシャッフルして正解の位置が固定されないようにする。
 $choices['0']=$row['answer'];
 shuffle($choices);
 
+//正解の場合は$_SESSION['kotae']にcodeを格納、不正解の場合は0を格納する。後で結果表示に使う予定。
 for($i=0;$i<=3;$i++){
   if($choices[$i]===$answer){
     $kotae[$i]=$id;
