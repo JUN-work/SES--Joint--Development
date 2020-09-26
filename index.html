@@ -50,103 +50,24 @@
   <body id="page-top">
     <!----------------------------------------------->
     <header>
-      <nav id="nav01">
+      <nav>
         <div class="container navbar navbar-expand-lg navbar-light">
           <a class="navbar-brand mr-auto" href="index.html"
             ><img src="img/logo.png" alt="サイト名" height="50"
           /></a>
-          <ul
-            class="nav mr-3 align-self-lg-end justify-content-lg-end d-none d-lg-flex"
-          >
-            <li class="nav-item">
-              <a href="#" class="nav-link p-2"
-                ><i class="fa fa-chevron-right mr-1 small"></i>LINK01</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link p-2"
-                ><i class="fa fa-chevron-right mr-1 small"></i>LINK02</a
-              >
-            </li>
-          </ul>
-          <form class="form-inline mr-3 d-none d-lg-flex align-self-lg-end">
-            <input
-              class="form-control"
-              type="text"
-              placeholder="サイト内を検索"
-              aria-label="Search"
-            />
-          </form>
           <a
-            href="contact/index.html"
-            class="btn btn-warning mr-1 d-none d-lg-inline-block text-white"
-            >無料体験<br />レッスン</a
+            href="register.html"
+            class="btn btn-secondary btn-lg mr-1 text-white"
+            >新規登録</a
           >
-          <a
-            href="contact/index.html"
-            class="btn btn-primary d-none d-lg-inline-block"
-            >資料請求<br />はこちら</a
+          <a href="login.html" class="btn btn-primary btn-lg mr-1 text-white"
+            >ログイン</a
           >
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
         </div>
       </nav>
-      <!-- /# nav01 -->
-      <nav class="navbar navbar-expand-lg navbar-light p-0" id="nav02">
-        <div class="container">
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav nav-fill py-lg-3">
-              <li class="nav-item d-block d-lg-none">
-                <form class="px-4 py-3">
-                  <input
-                    class="form-control"
-                    type="text"
-                    placeholder="サイト内を検索"
-                    aria-label="Search"
-                  />
-                </form>
-              </li>
-              <li class="nav-item">
-                <a href="sample/index.html" class="nav-link p-3 p-lg-0">MENU</a>
-              </li>
-              <li class="nav-item">
-                <a href="sample/index.html" class="nav-link p-3 p-lg-0">MENU</a>
-              </li>
-              <li class="nav-item">
-                <a href="sample/index.html" class="nav-link p-3 p-lg-0">MENU</a>
-              </li>
-              <li class="nav-item">
-                <a href="sample/index.html" class="nav-link p-3 p-lg-0">MENU</a>
-              </li>
-              <li class="nav-item last-list-md">
-                <a href="sample/index.html" class="nav-link p-3 p-lg-0">MENU</a>
-              </li>
-              <li class="nav-item d-block d-lg-none link-secondary">
-                <a href="#" class="nav-link p-3 p-lg-0"
-                  ><i class="fa fa-chevron-right mr-2"></i>LINK01</a
-                >
-              </li>
-              <li class="nav-item d-block d-lg-none link-secondary">
-                <a href="#" class="nav-link p-3 p-lg-0"
-                  ><i class="fa fa-chevron-right mr-2"></i>LINK02</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- /# nav02 -->
     </header>
     <!----------------------------------------------->
+
     <main>
       <section class="questions">
         <div>
@@ -198,106 +119,60 @@
     </main>
 
     <!----------------------------------------------->
-    <footer id="footer" class="bg-light py-5">
-      <div class="container py-4 py-md-5">
-        <div id="footer-sns" class="row align-items-center border-bottom">
-          <div class="col-6 col-lg-3 pb-4">
-            <a
-              href="./"
-              target="_blank"
-              rel="nofollow"
-              class="d-flex align-items-center"
-              ><img src="img/sns.svg" alt="Official Facebook Page" /><span
-                >Official Facebook Page</span
-              ></a
-            >
-          </div>
-          <div class="col-6 col-lg-3 pb-4">
-            <a
-              href="./"
-              target="_blank"
-              rel="nofollow"
-              class="d-flex align-items-center"
-              ><img src="img/sns.svg" alt="Official Twitter" /><span
-                >Official Twitter</span
-              ></a
-            >
-          </div>
-          <div class="col-6 col-lg-3 pb-4">
-            <a
-              href="./"
-              target="_blank"
-              rel="nofollow"
-              class="d-flex align-items-center"
-              ><img src="img/sns.svg" alt="Official LINE" /><span
-                >Official LINE Account</span
-              ></a
-            >
-          </div>
-          <div class="col-6 col-lg-3 pb-4">
-            <a
-              href="./"
-              target="_blank"
-              rel="nofollow"
-              class="d-flex align-items-center"
-              ><img src="img/sns.svg" alt="Official Instagram" /><span
-                >Official Instagram</span
-              ></a
-            >
-          </div>
-        </div>
-        <!-- .row -->
 
-        <div id="footer-index" class="row pt-4">
+    <footer id="footer" class="bg-light py-5">
+      <!--display-4→display-5、py-5→py-1に変更-->
+      <h2 class="display-5 text-center font-patrick py-1">
+        Production Staff's SNS
+      </h2>
+      <div class="container py-4 py-md-5">
+        <div id="footer-index" class="row pt-1">
+          <!--pt-4→pt-1に変更-->
           <ul class="col list-unstyled">
-            <li><a href="#">MENU</a></li>
+            <li>JUN</li>
             <li>
               <ul class="list-unstyled">
-                <li><a href="#">SUBMENU</a></li>
-                <li><a href="#">SUBMENU</a></li>
-                <li><a href="#">SUBMENU</a></li>
+                <li>
+                  <a href="https://twitter.com/JUN_work_life">Twitter</a>
+                </li>
+                <li><a href="https://github.com/JUN-work">GitHub</a></li>
               </ul>
             </li>
           </ul>
           <ul class="col list-unstyled">
-            <li><a href="#">MENU</a></li>
+            <li>Yuki.Ishizaki</li>
             <li>
               <ul class="list-unstyled">
-                <li><a href="#">SUBMENU</a></li>
-                <li><a href="#">SUBMENU</a></li>
-                <li><a href="#">SUBMENU</a></li>
+                <li><a href="https://twitter.com/zakky0519">Twitter</a></li>
+                <li>
+                  <a href="https://github.com/YukiIshizaki0525">GitHub</a>
+                </li>
               </ul>
             </li>
           </ul>
           <ul class="col list-unstyled">
-            <li><a href="#">MENU</a></li>
+            <li>そってぃ</li>
             <li>
               <ul class="list-unstyled">
-                <li><a href="#">SUBMENU</a></li>
-                <li><a href="#">SUBMENU</a></li>
-                <li><a href="#">SUBMENU</a></li>
+                <li><a href="https://twitter.com/sohhprog">Twitter</a></li>
+                <li><a href="https://github.com/sohh85">GitHub</a></li>
               </ul>
             </li>
           </ul>
           <ul class="col list-unstyled">
-            <li><a href="#">MENU</a></li>
+            <li>綾</li>
             <li>
               <ul class="list-unstyled">
-                <li><a href="#">SUBMENU</a></li>
-                <li><a href="#">SUBMENU</a></li>
-                <li><a href="#">SUBMENU</a></li>
+                <li><a href="https://twitter.com/yanagi4939">Twitter</a></li>
+                <li>
+                  <a href="https://github.com/AYA-kurokiri09">GitHub</a>
+                </li>
               </ul>
             </li>
           </ul>
           <ul class="col list-unstyled">
-            <li><a href="#">MENU</a></li>
-            <li>
-              <ul class="list-unstyled">
-                <li><a href="#">SUBMENU</a></li>
-                <li><a href="#">SUBMENU</a></li>
-                <li><a href="#">SUBMENU</a></li>
-              </ul>
-            </li>
+            <li><a href="./contact/index.php">お問い合わせはこちら</a></li>
+            <!--contactフォルダ内のindex.php(お問い合わせページ)に飛びます-->
           </ul>
         </div>
         <!-- /.footer-index -->
