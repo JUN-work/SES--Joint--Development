@@ -37,6 +37,10 @@ main {
   background-color: $BgGray;
 }
 
+.subHeader {
+  @extend .font-lg;
+}
+
 .main-title {
   @extend .font-lg;
   font-weight: 600;
