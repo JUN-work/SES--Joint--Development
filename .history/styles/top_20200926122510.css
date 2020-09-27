@@ -51,20 +51,18 @@ header img{
 @media (max-width: 991.98px) {
   /* md タブレット・スマートフォン向け */
 
-  #nav02 .nav-item {
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid #dee2e6;
-    letter-spacing: 0.25rem;
-  }
+#nav02 .nav-item {
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #dee2e6;
+  letter-spacing: 0.25rem;
 }
 
 @media (max-width: 575.98px) {
   /* xs スマートフォン向け */
   
   /* フッター */
-  #footer-sns img {
-    height: 29px;
-    margin-right: 15px;
-  }
+#footer-sns img {
+  height: 29px;
+  margin-right: 15px;
 }
