@@ -1,4 +1,5 @@
 <?php
+session_start();
 //DBに登録されている問題(id=1〜10)をランダムで1問選択
 if(!isset($rand)){
   $rand=range(1,10);
@@ -25,6 +26,10 @@ if(!isset($rand)){
 
 //選択された問題の情報を取得、取得した問題のカラムに入っている答え(answer)を正解としてセット。
 $id=$mondai['1'];
+$monme=$_SESSION['monme'];
+if(empty($_SESSION['monme'])){
+  $monme = 1;
+}
 $sql="SELECT question,answer FROM js_questions WHERE id=:id;";
 $stmt=$pdo->prepare($sql);
 $stmt->bindParam(':id',$id);
@@ -56,7 +61,7 @@ for($i=1;$i<=3;$i++){
 $choices['0']=$row['answer'];
 shuffle($choices);
 
-//正解の場合は$_SESSION['kotae']にcodeを格納、不正解の場合は0を格納する。後で結果表示に使う予定。
+//正解の場合は$_SESSION['kotae']にidを格納、不正解の場合は0を格納する。後で結果表示に使う予定。
 for($i=0;$i<=3;$i++){
   if($choices[$i]===$answer){
     $kotae[$i]=$id;
@@ -75,10 +80,11 @@ $_SESSION['kotae']=$kotae
   <title>選択式クイズ　JavaScript</title>
 </head>
 <body>
+  <h1>第<?php print$monme;?>問</h1>
   <p class="">問題と意味が一致するものを1つ選んで回答してください。</p>
   <dl>
-    <dt>第<?php print$id;?>問</dt>
-    <dd class="big"><?php print$question;?></dd>
+    <dd class="big">問題No.<?php print$id;?></dd>
+    <dd><?php print$question;?></dd>
   </dl>
   <form action="answer.php" method="POST" class="">
     <input type="radio" name="kotae" id="kotae" value="<?php echo$kotae['0'];?>" checked><?php print$choices['0'];?><br>
