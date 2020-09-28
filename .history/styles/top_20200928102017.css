@@ -19,8 +19,6 @@ a:hover { color: #a9a9a9; }
 .text-shadow { text-shadow: 1px 1px 3px #000; }
 .font-patrick { font-family: 'Fredericka the Great', cursive; }
 
-/* body部分 */
-
 header{
   background-image: url(/img/SE2_header2.png);
   height: 100px;
@@ -36,18 +34,8 @@ header img{
 }
 
 /* ロード画面 */
-.start{
-  background-color: rgba(0, 255, 242, 0.877);
-  position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-  z-index: 10;
-}
-.start-inner{
+.loader{
   position: absolute;
-  opacity: 1;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
@@ -83,10 +71,7 @@ header img{
 
 @media (max-width: 575.98px) {
   /* xs スマートフォン向け */
-  .start-inner img{
-    width: 120%;
-    height: 120%;
-  }
+  
   /* フッター */
   #footer-sns img {
     height: 29px;

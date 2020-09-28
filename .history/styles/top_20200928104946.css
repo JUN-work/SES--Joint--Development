@@ -84,8 +84,8 @@ header img{
 @media (max-width: 575.98px) {
   /* xs スマートフォン向け */
   .start-inner img{
-    width: 120%;
-    height: 120%;
+    width: 80%;
+    height: 80%;
   }
   /* フッター */
   #footer-sns img {

@@ -37,8 +37,9 @@ header img{
 
 /* ロード画面 */
 .start{
-  background-color: rgba(0, 255, 242, 0.877);
+  background: #FFF;
   position: fixed;
+  /* opacity: 0.5; */
 	top: 0;
 	left: 0;
 	height: 100%;
@@ -83,10 +84,7 @@ header img{
 
 @media (max-width: 575.98px) {
   /* xs スマートフォン向け */
-  .start-inner img{
-    width: 120%;
-    height: 120%;
-  }
+  
   /* フッター */
   #footer-sns img {
     height: 29px;
