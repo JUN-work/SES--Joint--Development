@@ -26,9 +26,12 @@ if(!isset($rand)){
 
 //選択された問題の情報を取得、取得した問題のカラムに入っている答え(answer)を正解としてセット。
 $id=$mondai['1'];
+
 $monme=$_SESSION['monme'];
-if(empty($_SESSION['monme'])){
-  $monme = 1;
+if(!isset($monme)){
+  $monme++;
+}else{
+  $monme=1;
 }
 $sql="SELECT question,answer FROM js_questions WHERE id=:id;";
 $stmt=$pdo->prepare($sql);

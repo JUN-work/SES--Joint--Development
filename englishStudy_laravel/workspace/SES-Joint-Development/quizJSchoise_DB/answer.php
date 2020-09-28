@@ -2,16 +2,16 @@
 
 session_start();
 
-
 $monme=$_SESSION['monme'];
 $id=$_SESSION['seikai']['id'];
 $question=$_SESSION['seikai']['question'];
 $answer=$_SESSION['seikai']['answer'];
+$ok_count=$_SESSION['seikai']['ok_count'];
 
 if($_POST['kotae']===$_SESSION['seikai']['id']){
     $hantei="正解!";
   if(isset($_SESSION['seikai']['ok_count'])){
-    $ok_count=$_SESSION['seikai']['ok_count']++;
+    $ok_count++;
   }else{
     $ok_count=1;
   }
@@ -31,7 +31,7 @@ $_SESSION['rireki']['kekka'][$monme]=$hantei;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>選択式クイズ　JavaScript</title>
 </head>
 <body>
     <h1>回答</h1>
@@ -44,4 +44,3 @@ $_SESSION['rireki']['kekka'][$monme]=$hantei;
     <p>現在、<?php echo$monme;?>問中<?php echo$ok_count;?>問正解しています</p>
 </body>
 </html>
-<?php $monme++; ?>
