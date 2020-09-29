@@ -28,7 +28,7 @@ if(!isset($rand)){
 $id=$mondai['1'];
 
 $monme=$_SESSION['monme'];
-if(!isset($monme)){
+if(isset($monme)){
   $monme++;
 }else{
   $monme=1;

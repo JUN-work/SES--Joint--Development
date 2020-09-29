@@ -16,6 +16,9 @@ if($_POST['kotae']===$_SESSION['seikai']['id']){
     $ok_count=1;
   }
   $_SESSION['seikai']['ok_count']=$ok_count;
+}elseif(!isset($_SESSION['seikai']['ok_count'])){
+  $hantei="不正解!";
+  $ok_count=0;
 }else{
   $hantei="不正解!";
   $ok_count=$_SESSION['seikai']['ok_count'];
@@ -40,7 +43,13 @@ $_SESSION['rireki']['kekka'][$monme]=$hantei;
     <dt>第<?php print$monme;?>問の正解</dt>
     <dd>問題No.<?php print$id;?><br><?php print$question;?><br><?php print$answer;?></dd>
     </dl>
-    <p><a href='index.php'>次の問題へ</a></p>
-    <p>現在、<?php echo$monme;?>問中<?php echo$ok_count;?>問正解しています</p>
+    <?php
+    if($monme>=10){
+      echo"<p><a href='result.php'>結果ページへ</a></p>";
+    }else{
+      echo"<p><a href='index.php'>次の問題へ</a></p>";
+    }
+  ?>
+  <p>現在、<?php echo $monme;?>問中<?php echo $ok_count;?>問正解しています</p>
 </body>
 </html>
