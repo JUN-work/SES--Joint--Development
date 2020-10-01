@@ -20,7 +20,7 @@ $ok_count=$_SESSION['seikai']['ok_count'];
     <table class="grayback">
     <tr><th id="num">No.</th><th>設問</th><th>解答</th><th>結果</th></tr>
     <?php
-    for($i=1;$i<=5;$i++){
+    for($i=1;$i<=10;$i++){
     $rireki['question'][$i]=$_SESSION['rireki']['question'][$i];
     $rireki['answer'][$i]=$_SESSION['rireki']['answer'][$i];
     $rireki['kekka'][$i]=$_SESSION['rireki']['kekka'][$i];

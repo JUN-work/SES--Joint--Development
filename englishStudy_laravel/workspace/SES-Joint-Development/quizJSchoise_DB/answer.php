@@ -6,10 +6,12 @@ $monme=$_SESSION['monme'];
 $id=$_SESSION['seikai']['id'];
 $question=$_SESSION['seikai']['question'];
 $answer=$_SESSION['seikai']['answer'];
+$explanation=$_SESSION['seikai']['explanation'];
+$url=$_SESSION['seikai']['url'];
 $ok_count=$_SESSION['seikai']['ok_count'];
 
 if($_POST['kotae']===$_SESSION['seikai']['id']){
-    $hantei="正解!";
+    $hantei="正解";
   if(isset($_SESSION['seikai']['ok_count'])){
     $ok_count++;
   }else{
@@ -17,10 +19,10 @@ if($_POST['kotae']===$_SESSION['seikai']['id']){
   }
   $_SESSION['seikai']['ok_count']=$ok_count;
 }elseif(!isset($_SESSION['seikai']['ok_count'])){
-  $hantei="不正解!";
+  $hantei="不正解";
   $ok_count=0;
 }else{
-  $hantei="不正解!";
+  $hantei="不正解";
   $ok_count=$_SESSION['seikai']['ok_count'];
 }
 
@@ -41,7 +43,11 @@ $_SESSION['rireki']['kekka'][$monme]=$hantei;
     <h2><?php echo$hantei;?></h2>
     <dl class="grayback" id="answer">
     <dt>第<?php print$monme;?>問の正解</dt>
-    <dd>問題No.<?php print$id;?><br><?php print$question;?><br><?php print$answer;?></dd>
+    <dd>問題No.<?php print$id;?><br><?php print$question;?><br>
+    正しい解答：<?php print$answer;?><br>
+    解説：<?php print$explanation;?><br><br>
+    もっと詳しく：<?php echo"<p><a href='$url'>$url</a></p>";?>
+    </dd>
     </dl>
     <?php
     if($monme>=10){

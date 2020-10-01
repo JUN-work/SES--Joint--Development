@@ -1,5 +1,6 @@
 <?php
 session_start();
+set_time_limit(900);
 //DBに登録されている問題(id=1〜10)をランダムで1問選択
 if(!isset($rand)){
   $rand=range(1,10);
@@ -33,17 +34,21 @@ if(isset($monme)){
 }else{
   $monme=1;
 }
-$sql="SELECT question,answer FROM js_questions WHERE id=:id;";
+$sql="SELECT question,answer,explanation,url FROM js_questions WHERE id=:id;";
 $stmt=$pdo->prepare($sql);
 $stmt->bindParam(':id',$id);
 $stmt->execute();
 $row=$stmt->fetch(PDO::FETCH_ASSOC);
 $question=$row['question'];
 $answer=$row['answer'];
+$explanation=$row['explanation'];
+$url=$row['url'];
 $_SESSION['monme']=$monme;
 $_SESSION['seikai']['id']=$id;
 $_SESSION['seikai']['question']=$question;
 $_SESSION['seikai']['answer']=$answer;
+$_SESSION['seikai']['explanation']=$explanation;
+$_SESSION['seikai']['url']=$url;
 
 //正解以外の選択肢を生成。
 $rand=range(1,10);
