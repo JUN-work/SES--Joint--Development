@@ -1,0 +1,102 @@
+// スマホ表示時のフォントサイズ
+.font-sm {
+  font-size: 14px;
+}
+
+.font-md {
+  font-size: 17px;
+}
+
+.font-lr {
+  font-size: 17px;
+}
+
+.font-lg {
+  font-size: 25px;
+}
+
+.mb-sm {
+  margin-bottom: 16px !important;
+}
+
+.p-sm {
+  padding: 10px !important;
+}
+
+.content-width {
+  width: 90%;
+  margin: 0 auto;
+  max-width: $contentMaxWidth;
+}
+
+.border {
+  border-bottom: 2px solid #e6e9ed;
+}
+
+main {
+  background-color: $BgGray;
+}
+
+.main-title {
+  @extend .font-lg;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.sub-title {
+  @extend .font-sm;
+  color: $SubTitle;
+}
+
+.is-hidden a {
+  opacity: 0;
+}
+
+.questions {
+  @extend .content-width;
+
+  &__title {
+    @extend .font-lr;
+    @extend .mb-sm;
+  }
+
+  &__text {
+    color: $White;
+  }
+
+  &__select {
+    @extend .p-sm;
+
+    &.is-hidden {
+      display: none;
+    }
+  }
+
+  &__type {
+    @extend .p-sm;
+    color: #73879c;
+    background-color: $White;
+
+    span {
+      display: block;
+      @extend .border;
+    }
+  }
+
+  &__start {
+    @extend .p-sm;
+    text-align: center;
+
+    a {
+      @extend .font-md;
+      color: $BtnTextColor;
+      border-radius: 3px;
+      border-color: #ccc;
+
+      &:hover {
+        background-color: #e6e6e6;
+        border-color: #adadad;
+      }
+    }
+  }
+}
