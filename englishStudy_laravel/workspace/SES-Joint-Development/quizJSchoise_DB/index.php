@@ -2,8 +2,9 @@
 session_start();
 
 //最初に1〜20から10個の数字を選んだ乱数配列を生成し、その数字に対応した問題No.($id)の情報を正解としてセット。
+//現在、一時的に1〜10の範囲からの選択としています。
 if(!isset($_SESSION['rand'])){
-  $rand=range(1,20);
+  $rand=range(1,10);
   shuffle($rand);
   for($i=1;$i<=10;$i++){
     $_SESSION['rand'][$i-1] = $rand[$i-1];
@@ -45,7 +46,8 @@ $_SESSION['seikai']['url']=$url;
 
 //正解以外の選択肢を生成。
 //正解の$id(問題No.)を除いた配列を生成して順番をランダムにし、その配列の初めから3つを不正解の選択肢としてchoices[1],[2],[3]に格納する。
-$rand2=range(1,20);
+//現在、一時的に1〜10の範囲からの選択としています。
+$rand2=range(1,10);
 if (in_array($id, $rand2)){
   $rand2_no=array_search("$id", $rand2);
   unset($rand2[$rand2_no]);
