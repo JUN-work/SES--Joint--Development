@@ -463,5 +463,140 @@ class css_questions_TableSeeder extends Seeder
     ];
     DB::table('css_questions')->insert($param);
 
+        $param = [  
+            'id' => '51',
+            'question' => '罫線のスタイル設定', // 問題文
+            'answer' => 'border-style',  // 解答
+            'explanation' => '罫線のスタイルの設定を行うことができる。',  // 解説
+            'url' => 'https://web-designer.cman.jp/css_ref/abc_list/border-style/',  //詳細リンク
+    ];
+    DB::table('css_questions')->insert($param);
+
+        $param = [  
+            'id' => '52',
+            'question' => '罫線の上辺の設定', // 問題文
+            'answer' => 'border-top',  // 解答
+            'explanation' => '罫線の上辺に関する設定をまとめて行うことができる。',  // 解説
+            'url' => 'https://web-designer.cman.jp/css_ref/abc_list/border-top/',  //詳細リンク
+    ];
+    DB::table('css_questions')->insert($param);
+
+        $param = [  
+            'id' => '53',
+            'question' => '罫線の太さ設定', // 問題文
+            'answer' => 'border-width',  // 解答
+            'explanation' => '罫線の太さの設定を行うことができる。',  // 解説
+            'url' => 'https://web-designer.cman.jp/css_ref/abc_list/border-width/',  //詳細リンク
+    ];
+    DB::table('css_questions')->insert($param);
+
+        $param = [  
+            'id' => '54',
+            'question' => '要素に影を付ける', // 問題文
+            'answer' => 'box-shadow',  // 解答
+            'explanation' => '要素に影を付けることができる。',  // 解説
+            'url' => 'https://web-designer.cman.jp/css_ref/abc_list/box-shadow/',  //詳細リンク
+    ];
+    DB::table('css_questions')->insert($param);
+
+        $param = [  
+            'id' => '55',
+            'question' => 'アウトラインの表示を(まとめて)設定', // 問題文
+            'answer' => 'outline',  // 解答
+            'explanation' => 'アウトラインのスタイル、太さ、色、アウトラインまでの距離をまとめて指定できる。',  // 解説
+            'url' => 'https://web-designer.cman.jp/css_ref/abc_list/outline/',  //詳細リンク
+    ];
+    DB::table('css_questions')->insert($param);
+
+        $param = [  
+            'id' => '56',
+            'question' => 'アニメーション設定', // 問題文
+            'answer' => 'animation',  // 解答
+            'explanation' => '要素をアニメーション（指定した動き）に変化させる事ができる。',  // 解説
+            'url' => 'https://web-designer.cman.jp/css_ref/abc_list/animation/',  //詳細リンク
+    ];
+    DB::table('css_questions')->insert($param);
+
+        $param = [  
+            'id' => '57',
+            'question' => '時間的変化', // 問題文
+            'answer' => 'transition',  // 解答
+            'explanation' => '時間や速度を指定したCSSプロパティの値を変化させる事ができる。アニメーションの1つで、カーソルイン（:hover）のタイミングで変化を与えたりできる。',  // 解説
+            'url' => 'https://web-designer.cman.jp/css_ref/abc_list/transition/',  //詳細リンク
+    ];
+    DB::table('css_questions')->insert($param);
+
+        $param = [  
+            'id' => '58',
+            'question' => '変形(回転、拡大・縮小など)', // 問題文
+            'answer' => 'transform',  // 解答
+            'explanation' => '要素を変形させる事ができる。アニメーションとの組み合わせで要素が回り続けたり、拡大縮小などを繰り返すことができる。',  // 解説
+            'url' => 'https://web-designer.cman.jp/css_ref/abc_list/transform/',  //詳細リンク
+    ];
+    DB::table('css_questions')->insert($param);
+
+        $param = [  
+            'id' => '59',
+            'question' => 'flexアイテムの垂直方向の揃え方の設定', // 問題文
+            'answer' => 'align-items',  // 解答
+            'explanation' => 'flexbox（flexコンテナ内のflexアイテム）の垂直方向の揃え方を指定することができる。flexboxはCSS3で導入されたレイアウトモード。',  // 解説
+            'url' => 'https://web-designer.cman.jp/css_ref/abc_list/align-items/',  //詳細リンク
+    ];
+    DB::table('css_questions')->insert($param);
+
+        $param = [  
+            'id' => '60',
+            'question' => 'flexアイテムの水平方向の揃え方の設定', // 問題文
+            'answer' => 'justify-content',  // 解答
+            'explanation' => 'flexbox（flexコンテナ内のflexアイテム）の水平方向の揃え方を指定することができる。flexboxはCSS3で導入されたレイアウトモード。',  // 解説
+            'url' => 'https://web-designer.cman.jp/css_ref/abc_list/justify-content/',  //詳細リンク
+    ];
+    DB::table('css_questions')->insert($param);
+
+        $param = [  
+            'id' => '61',
+            'question' => 'グリッドコンテナをまとめて指定', // 問題文
+            'answer' => 'grid',  // 解答
+            'explanation' => 'TABLEのセルのような考え方で、アイテム（ボックス）を配置することができる。グリッドコンテナをまとめて指定することができる。',  // 解説
+            'url' => 'https://web-designer.cman.jp/css_ref/abc_list/grid/',  //詳細リンク
+    ];
+    DB::table('css_questions')->insert($param);
+
+        $param = [  
+            'id' => '62',
+            'question' => '高さの最大値', // 問題文
+            'answer' => 'max-height',  // 解答
+            'explanation' => '要素の高さの最大値を指定することができる。',  // 解説
+            'url' => 'https://web-designer.cman.jp/css_ref/abc_list/max-height/',  //詳細リンク
+    ];
+    DB::table('css_questions')->insert($param);
+
+        $param = [  
+            'id' => '63',
+            'question' => '高さの最小値', // 問題文
+            'answer' => 'min-height',  // 解答
+            'explanation' => '要素の高さの最小値を指定することができる。',  // 解説
+            'url' => 'https://web-designer.cman.jp/css_ref/abc_list/max-height/',  //詳細リンク
+    ];
+    DB::table('css_questions')->insert($param);
+
+        $param = [  
+            'id' => '64',
+            'question' => '書字方向', // 問題文
+            'answer' => 'direction',  // 解答
+            'explanation' => '書字方向を指定することができる。インライン要素に指定する場合は、「unicode-bidi」に、embed または bidi-override を指定する必要がある。',  // 解説
+            'url' => 'https://web-designer.cman.jp/css_ref/abc_list/direction/',  //詳細リンク
+    ];
+    DB::table('css_questions')->insert($param);
+
+        $param = [  
+            'id' => '65',
+            'question' => 'ボックスの大きさの算出', // 問題文
+            'answer' => 'box-sizing',  // 解答
+            'explanation' => 'widthやheightの値が適用される範囲を調整することができる。',  // 解説
+            'url' => 'https://web-designer.cman.jp/css_ref/abc_list/box-sizing/',  //詳細リンク
+    ];
+    DB::table('css_questions')->insert($param);
+
     }
 }
