@@ -1,13 +1,26 @@
 <?php
 session_start();
-set_time_limit(900);
-//DBに登録されている問題(id=1〜10)をランダムで1問選択
-if(!isset($rand)){
-  $rand=range(1,10);
+
+//最初に1〜20から10個の数字を選んだ乱数配列を生成し、その数字に対応した問題No.($id)の情報を正解としてセット。
+if(!isset($_SESSION['rand'])){
+  $rand=range(1,20);
   shuffle($rand);
-    for($i=1;$i<=10;$i++){
-      $mondai[$i]=$rand[$i];
-    }
+  for($i=1;$i<=10;$i++){
+    $_SESSION['rand'][$i-1] = $rand[$i-1];
+  }
+}
+    
+$monme=$_SESSION['monme'];
+  if(isset($monme)){
+    $monme++;
+    $i=$monme;
+    $mondai[$i-1]=$_SESSION['rand'][$i-1];
+    $id=$mondai[$i-1];
+  }else{
+    $monme=1;
+    $i=$monme;
+    $mondai[$i-1]=$_SESSION['rand'][$i-1];
+    $id=$mondai[$i-1];
   }
 
 //DB情報の設定・接続チェック
@@ -26,14 +39,6 @@ if(!isset($rand)){
   }
 
 //選択された問題の情報を取得、取得した問題のカラムに入っている答え(answer)を正解としてセット。
-$id=$mondai['1'];
-
-$monme=$_SESSION['monme'];
-if(isset($monme)){
-  $monme++;
-}else{
-  $monme=1;
-}
 $sql="SELECT question,answer,explanation,url FROM js_questions WHERE id=:id;";
 $stmt=$pdo->prepare($sql);
 $stmt->bindParam(':id',$id);
@@ -51,25 +56,29 @@ $_SESSION['seikai']['explanation']=$explanation;
 $_SESSION['seikai']['url']=$url;
 
 //正解以外の選択肢を生成。
-$rand=range(1,10);
-shuffle($rand);
+//正解の$id(問題No.)を除いた配列を生成して順番をランダムにし、その配列の初めから3つを不正解の選択肢としてchoices[1],[2],[3]に格納する。
+$rand2=range(1,20);
+if (in_array($id, $rand2)){
+  $rand2_no=array_search("$id", $rand2);
+  unset($rand2[$rand_no]);
+  $rand2 = array_values($rand2);
+  shuffle($rand2);
+}
+
 for($i=1;$i<=3;$i++){
-  $sql="SELECT answer FROM js_questions WHERE id=:id;";
+  $sql='SELECT answer FROM js_questions WHERE id=:id';
   $stmt=$pdo->prepare($sql);
-  $stmt->bindParam(':id',$rand[$i-1]);
+  $stmt->bindParam(':id',$rand2[$i-1]);
   $stmt->execute();
   $row2=$stmt->fetch(PDO::FETCH_ASSOC);
   $choices[$i]=$row2['answer'];
-  if($choices[$i]===$row['answer']){
-    $i=$i-1;
-  }
 }
 
-//$answer['0']に正解を格納後、選択肢をシャッフルして正解の位置が固定されないようにする。
+//$choices['0']に正解を格納後、選択肢をシャッフルして正解の位置が固定されないようにする。
 $choices['0']=$row['answer'];
 shuffle($choices);
 
-//正解の場合は$_SESSION['kotae']にidを格納、不正解の場合は0を格納する。後で結果表示に使う予定。
+//正解の場合は$_SESSION['kotae']にidを格納、不正解の場合は0を格納する。後で結果表示に使う。
 for($i=0;$i<=3;$i++){
   if($choices[$i]===$answer){
     $kotae[$i]=$id;

@@ -25,8 +25,8 @@ $ok_count=$_SESSION['seikai']['ok_count'];
     $rireki['answer'][$i]=$_SESSION['rireki']['answer'][$i];
     $rireki['kekka'][$i]=$_SESSION['rireki']['kekka'][$i];
     echo"<tr><td>".$i."</td>";
-    echo"<td class='uta'>".$rireki['qusetion'][$i]."</td>";
-    echo"<td class='uta'>".$rireki['answer'][$i]."</td>";
+    echo"<td>".$rireki['question'][$i]."</td>";
+    echo"<td>".$rireki['answer'][$i]."</td>";
     echo"<td>".$rireki['kekka'][$i]."</td></tr>";
     }
     ?>
