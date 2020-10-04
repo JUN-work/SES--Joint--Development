@@ -60,7 +60,7 @@ $_SESSION['seikai']['url']=$url;
 $rand2=range(1,20);
 if (in_array($id, $rand2)){
   $rand2_no=array_search("$id", $rand2);
-  unset($rand2[$rand_no]);
+  unset($rand2[$rand2_no]);
   $rand2 = array_values($rand2);
   shuffle($rand2);
 }
@@ -100,7 +100,7 @@ $_SESSION['kotae']=$kotae
   <h1>第<?php print$monme;?>問</h1>
   <p class="">問題と意味が一致するものを1つ選んで回答してください。</p>
   <dl>
-    <dd class="big">問題No.<?php print$id;?></dd>
+    <!--<dd>問題No.<?php print$id;?></dd>-->
     <dd><?php print$question;?></dd>
   </dl>
   <form action="answer.php" method="POST" class="">

@@ -43,11 +43,12 @@ $_SESSION['rireki']['kekka'][$monme]=$hantei;
     <h2><?php echo$hantei;?></h2>
     <dl class="grayback" id="answer">
     <dt>第<?php print$monme;?>問の正解</dt>
-    <dd>問題No.<?php print$id;?><br><?php print$question;?><br>
-    正しい解答：<?php print$answer;?><br>
-    解説：<?php print$explanation;?><br><br>
-    もっと詳しく：<?php echo"<p><a href='$url'>$url</a></p>";?>
-    </dd>
+    <!--<dd>問題No.<?php print$id;?></dd>-->
+    <dd><?php print$question;?></dd>
+    <dd>正しい解答：<?php print$answer;?></dd>
+    <dd>解説：<?php print$explanation;?></dd>
+    <br>
+    <dd>もっと詳しく：<?php echo"<p><a href='$url'>$url</a></p>";?></dd>
     </dl>
     <?php
     if($monme>=10){
