@@ -48,7 +48,7 @@ $_SESSION['rireki']['kekka'][$monme]=$hantei;
     <dd>正しい解答：<?php print$answer;?></dd>
     <dd>解説：<?php print$explanation;?></dd>
     <br>
-    <dd>もっと詳しく：<?php echo"<p><a href='$url'>$url</a></p>";?></dd>
+    <dd>もっと詳しく：<?php echo"<p><a href='$url 'target='_blank'>$url</a></p>";?></dd>
     </dl>
     <?php
     if($monme>=10){
