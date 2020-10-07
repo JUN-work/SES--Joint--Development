@@ -6,8 +6,8 @@ session_start();
 if(!isset($_SESSION['rand'])){
   $rand=range(1,20);
   shuffle($rand);
-  for($i=1;$i<=10;$i++){
-    $_SESSION['rand'][$i-1] = $rand[$i-1];
+  for($i=0;$i<10;$i++){
+    $_SESSION['rand'] = $rand;
   }
 }
     
@@ -15,13 +15,11 @@ $monme=$_SESSION['monme'];
   if(isset($monme)){
     $monme++;
     $i=$monme;
-    $mondai[$i-1]=$_SESSION['rand'][$i-1];
-    $id=$mondai[$i-1];
+    $id=$_SESSION['rand'][$i-1];
   }else{
     $monme=1;
     $i=$monme;
-    $mondai[$i-1]=$_SESSION['rand'][$i-1];
-    $id=$mondai[$i-1];
+    $id=$_SESSION['rand'][$i-1];
   }
 
 //DB情報の設定・接続チェック
