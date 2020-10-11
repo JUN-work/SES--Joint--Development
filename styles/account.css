@@ -1,0 +1,33 @@
+/* ログイン・登録画面 */
+
+body {
+    background: #4696e5;
+    font-size: 18px;
+}
+
+.head h1 {
+    padding-left: 20px;
+    margin: 10px;
+}
+
+.yellow-btn {
+    background: #FFFF99;
+}
+
+.wrapper {
+    width: 700px;
+    margin: 40px auto;
+    border-radius: 5px;
+    background: #EEEEEE;
+}
+
+.head {
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    background: #CCCCCC;
+}
+
+.form-wrapper {
+    padding: 30px 46px;
+}
