@@ -12,11 +12,11 @@ if (isset($_SESSION['name'])) {
 <html>
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
-  <meta charset="UTF-8">
-  <title>ページ名 | サイト名</title>
-  <meta name="description" content="サイトの説明文">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="canonical" href="あなたのサイトURL">
+  <meta charset="UTF-8" />
+  <title>SE2 -Study English Site for Engineers-</title>
+  <meta name="description" content="プログラミング言語別に英語が学べるサイトです" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="canonical" href="あなたのサイトURL" />
   <link rel="icon" type="image/png" href="ファビコンのパス" />
   <!-- OGP設定 -->
   <meta property="og:type" content="website" />
@@ -24,340 +24,90 @@ if (isset($_SESSION['name'])) {
   <meta property="og:image" content="SNSで表示させたい画像のパス" />
   <meta property="og:title" content="ページタイトル" />
   <meta property="og:description" content="サイトの説明文" />
-  <!-- Facebook用設定 -->
-  <meta property="fb:app_id" content="facebookのApp ID" />
-  <meta property="article:publisher" content="FacebookページのURL">
-  <!-- Twitter用設定 -->
-  <meta name="twitter:card" content="Twitterカードの種類">
-  <meta name="twitter:site" content="@ユーザー名">
   <!-- スタイルシートはここから -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+
+  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles/account.css" />
+  <link rel="stylesheet" href="styles/top.css" />
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 
 <body id="page-top">
   <!----------------------------------------------->
   <header class="bg-light">
-
     <nav>
       <div class="container navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand mr-auto" href="index.html"><img src="img/logo.png" alt="サイト名" height="50"></a>
+        <a class="navbar-brand mr-auto" href="index.php">
+          <img src="img/SE2.png" alt="サイト名" height="70" />
+        </a>
         <p class="pr-4 m-0 text-white">ようこそ<u><?= ($userName); ?></u>さん</p>
         <a href="user_chk/regist_mail.php" class="btn btn-light btn-lg mr-1 text-muted">新規登録</a>
         <a href="user_chk/login.php" class="btn btn-info btn-lg mr-1">ログイン</a>
       </div>
     </nav>
-
   </header>
   <!----------------------------------------------->
-
   <main>
-    <!----------------------------------------------->
-    <div class="container">
-      <div class="jumbotron mt-4">
-        <h1 class="display-4 font-weight-bold text-white text-shadow">Hello World</h1>
-        <p class="text-white text-shadow font-weight-bold h3">
-          これは単純なヒーローユニット、注目のコンテンツや情報に特別な注意を喚起するためのシンプルなジャンボトロンスタイルのコンポーネント。</p>
-        <hr class="my-4 border-white text-shadow" style="border-width:2px;">
-        <p class="text-white text-shadow font-weight-bold">より大きなコンテナの範囲内でコンテンツに空間をあけるため、文字の体裁と空白用のユーティリティクラスを使用している。</p>
-        <a class="btn btn-warning btn-lg text-white font-weight-bold" href="#" role="button">入学のお申し込みはこちら</a>
-      </div><!-- /.jumbotron -->
-      <!----------------------------------------------->
-      <section class="mb-5">
-        <div class="d-flex flex-column flex-lg-row border border-primary rounded">
-          <p class="text-center text-white bg-primary py-2 px-4 mb-0 align-self-stretch">お知らせ</p>
-          <p class="py-2 px-2 px-lg-4 mb-0"><span class="d-block d-lg-inline-block mr-lg-4">2018/12/01</span>Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit, se.</p>
-          <p class="pb-2 py-lg-2 px-2 px-lg-4 ml-auto mb-0"><a href="#" class="icon-link"><i class="fas fa-list-ul mr-2"></i>一覧を見る</a></p>
+    <div class="main-top">
+      <section class="questions">
+        <div>
+          <h2 class="main-title">-Study English Site for Engineers-</h2>
+          <p class="sub-title">言語別の英語を学習しよう！</p>
+        </div>
+        <div class="questions__title">
+          <button id="questions__css" class="questions__btn slide-bg">
+            CSS
+          </button>
+        </div>
+
+        <div class="questions__select">
+          <div class="questions__type">
+            <span>選択式</span>
+            <div class="questions__start">
+              <a href="#" class="btn btn-default btn-lg">学習する</a>
+            </div>
+          </div>
+          <br />
+          <div class="questions__type">
+            <span>記述式</span>
+            <div class="questions__start">
+              <a href="#" class="btn btn-default btn-lg">学習する</a>
+            </div>
+          </div>
+        </div>
+        <div class="questions__title">
+          <button id="questions__javascript" class="questions__btn slide-bg">
+            JavaScript
+          </button>
+        </div>
+        <div class="questions__select">
+          <div class="questions__type">
+            <span>選択式</span>
+            <div class="questions__start">
+              <a href="#" class="btn btn-default btn-lg">学習する</a>
+            </div>
+          </div>
+          <br />
+          <div class="questions__type">
+            <span>記述式</span>
+            <div class="questions__start">
+              <a href="#" class="btn btn-default btn-lg">学習する</a>
+            </div>
+          </div>
         </div>
       </section>
-    </div><!-- /.container -->
-    <!----------------------------------------------->
-    <section class="py-5 bg-yl-color">
-      <div class="container p-3 rounded">
-        <h2 class="text-center mb-3"><i class="fas fa-graduation-cap mr-3"></i>無料体験レッスンのご案内</h2>
-        <div class="text-center">
-          <a class="btn btn-warning btn-lg py-3 px-5 text-white font-weight-bold" href="#" role="button">お申し込みはこちら</a>
-        </div>
-      </div>
-    </section>
-    <!----------------------------------------------->
-    <section id="sec1" class="py-5">
-      <div class="container">
-
-        <h2 class="display-4 text-center font-patrick py-3">COURSES</h2>
-
-        <div class="row py-3">
-
-          <div class="col-lg-6 mb-2">
-            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm p-3">
-              <div class="col-12 col-md-auto text-center">
-                <img src="img/img-item01.png" alt="画像1">
-              </div>
-              <div class="col p-4 d-flex flex-column">
-                <h3>6カ月〜2歳</h3>
-                <p>かっこうも外をおみみずくからするとゴーシュが療からあわせてまるで今ばっられですなかをもっですた。</p>
-                <a href="#" class="icon-link"><i class="fas fa-arrow-right mr-2"></i>詳細を見る</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mb-2">
-            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm p-3">
-              <div class="col-12 col-md-auto text-center">
-                <img src="img/img-item02.png" alt="画像1">
-              </div>
-              <div class="col p-4 d-flex flex-column">
-                <h3>3歳〜6歳</h3>
-                <p>かっこうも外をおみみずくからするとゴーシュが療からあわせてまるで今ばっられですなかをもっですた。</p>
-                <a href="#" class="icon-link"><i class="fas fa-arrow-right mr-2"></i>詳細を見る</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mb-2">
-            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm p-3">
-              <div class="col-12 col-md-auto text-center">
-                <img src="img/img-item03.png" alt="画像1">
-              </div>
-              <div class="col p-4 d-flex flex-column">
-                <h3>7歳〜12歳</h3>
-                <p>かっこうも外をおみみずくからするとゴーシュが療からあわせてまるで今ばっられですなかをもっですた。</p>
-                <a href="#" class="icon-link"><i class="fas fa-arrow-right mr-2"></i>詳細を見る</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mb-2">
-            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm p-3">
-              <div class="col-12 col-md-auto text-center">
-                <img src="img/img-item04.png" alt="画像1">
-              </div>
-              <div class="col p-4 d-flex flex-column">
-                <h3>13歳〜15歳</h3>
-                <p>かっこうも外をおみみずくからするとゴーシュが療からあわせてまるで今ばっられですなかをもっですた。</p>
-                <a href="#" class="icon-link"><i class="fas fa-arrow-right mr-2"></i>詳細を見る</a>
-              </div>
-            </div>
-          </div>
-
-        </div><!-- /.row -->
-
-      </div><!-- /.container -->
-    </section>
-    <!----------------------------------------------->
-    <section id="sec2" class="py-5 bg-light">
-      <div class="container">
-
-        <h2 class="display-4 text-center font-patrick py-3">CONTENTS</h2>
-        <p class="text-lg-center lead">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br>tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam.
-        </p>
-
-        <div class="row py-3">
-          <div class="col-md-3 mb-5">
-            <img class="rounded-circle w-100 mb-3" src="img/sec1-image1.jpg" alt="画像1">
-            <h3 class="text-center">見出し</h3>
-            <p class="text-center">SAはコンテンツ百科で信頼行う読者でます上、投稿され下に編集家独自の執筆濫から侵害可能たんているたます。</p>
-            <div class="text-center">
-              <a href="#" class="btn btn-primary px-3"><i class="fas fa-arrow-right mr-3"></i>もっと詳しく</a>
-            </div>
-          </div>
-          <div class="col-md-3 mb-5">
-            <img class="rounded-circle w-100 mb-3" src="img/sec1-image2.jpg" alt="画像1">
-            <h3 class="text-center">見出し</h3>
-            <p class="text-center">SAはコンテンツ百科で信頼行う読者でます上、投稿され下に編集家独自の執筆濫から侵害可能たんているたます。</p>
-            <div class="text-center">
-              <a href="#" class="btn btn-primary px-3"><i class="fas fa-arrow-right mr-3"></i>もっと詳しく</a>
-            </div>
-          </div>
-          <div class="col-md-3 mb-5">
-            <img class="rounded-circle w-100 mb-3" src="img/sec1-image1.jpg" alt="画像1">
-            <h3 class="text-center">見出し</h3>
-            <p class="text-center">SAはコンテンツ百科で信頼行う読者でます上、投稿され下に編集家独自の執筆濫から侵害可能たんているたます。</p>
-            <div class="text-center">
-              <a href="#" class="btn btn-primary px-3"><i class="fas fa-arrow-right mr-3"></i>もっと詳しく</a>
-            </div>
-          </div>
-          <div class="col-md-3 mb-5">
-            <img class="rounded-circle w-100 mb-3" src="img/sec1-image2.jpg" alt="画像1">
-            <h3 class="text-center">見出し</h3>
-            <p class="text-center">SAはコンテンツ百科で信頼行う読者でます上、投稿され下に編集家独自の執筆濫から侵害可能たんているたます。</p>
-            <div class="text-center">
-              <a href="#" class="btn btn-primary px-3"><i class="fas fa-arrow-right mr-3"></i>もっと詳しく</a>
-            </div>
-          </div>
-        </div><!-- /.row -->
-      </div><!-- /.container -->
-    </section>
-    <!----------------------------------------------->
-    <section id="sec3" class="py-5">
-      <div class="container">
-
-        <h2 class="display-4 text-center font-patrick py-3">CLASS<br class="d-block d-md-none">ROOMS</h2>
-
-        <div class="row py-3">
-
-          <div class="col-md-4 col-12 mb-3">
-            <div class="card">
-              <h3 class="p-2 h5 text-center font-weight-bold">〇〇〇校</h3>
-              <img class="card-img-top" src="img/sec4-image1.jpg" alt="画像1">
-              <div class="card-body">
-                <strong class="card-title d-none d-md-block">見出し</strong>
-                <p class="card-text text-justify d-none d-md-block">
-                  SAはコンテンツ百科で信頼行う読者でます上、投稿され下に編集家独自の執筆濫からしせるばは含むんを引用することとして侵害可能たんているたます。</p>
-                <a href="#" class="icon-link"><i class="fas fa-arrow-right mr-2"></i>詳細を見る</a>
-              </div>
-            </div><!-- /.card -->
-          </div>
-
-          <div class="col-md-4 col-12 mb-3">
-            <div class="card">
-              <h3 class="p-2 h5 text-center font-weight-bold">〇〇〇校</h3>
-              <img class="card-img-top" src="img/sec4-image2.jpg" alt="画像1">
-              <div class="card-body">
-                <strong class="card-title d-none d-md-block">見出し</strong>
-                <p class="card-text text-justify d-none d-md-block">
-                  SAはコンテンツ百科で信頼行う読者でます上、投稿され下に編集家独自の執筆濫からしせるばは含むんを引用することとして侵害可能たんているたます。</p>
-                <a href="#" class="icon-link"><i class="fas fa-arrow-right mr-2"></i>詳細を見る</a>
-              </div>
-            </div><!-- /.card -->
-          </div>
-
-          <div class="col-md-4 col-12 mb-3">
-            <div class="card">
-              <h3 class="p-2 h5 text-center font-weight-bold">〇〇〇校</h3>
-              <img class="card-img-top" src="img/sec4-image1.jpg" alt="画像1">
-              <div class="card-body">
-                <strong class="card-title d-none d-md-block">見出し</strong>
-                <p class="card-text text-justify d-none d-md-block">
-                  SAはコンテンツ百科で信頼行う読者でます上、投稿され下に編集家独自の執筆濫からしせるばは含むんを引用することとして侵害可能たんているたます。</p>
-                <a href="#" class="icon-link"><i class="fas fa-arrow-right mr-2"></i>詳細を見る</a>
-              </div>
-            </div><!-- /.card -->
-          </div>
-
-        </div><!-- /.row -->
-
-      </div><!-- /.container -->
-    </section>
-    <!----------------------------------------------->
-    <section class="bg-maincolor py-5">
-      <div class="container">
-        <div class="row py-3">
-          <div class="col-md-4">
-            <img src="img/contact-bg.png" alt="" class="w-100">
-          </div>
-          <div class="col-md-8 d-flex flex-column justify-content-between">
-            <p class="text-md-center h5 mb-3">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.<br>Lorem ipsum dolor sit amet,
-              sed do eiusmod.
-            </p>
-            <div class="text-center">
-              <a href="contact/index.html" class="btn btn-warning btn-lg p-3 mb-3 mr-lg-3 text-white font-weight-bold"><i class="fas fa-arrow-right mr-3"></i>無料体験レッスンのお申込み</a>
-              <a href="contact/index.html" class="btn btn-primary btn-lg p-3 mb-3 font-weight-bold"><i class="fas fa-arrow-right mr-3"></i>資料請求のお申込み</a>
-            </div>
-            <div class="border border-dark text-center p-3">
-              <p class="h5">お問合せ：<strong class="h5 tel text-danger mr-lg-3">0120-000-000</strong><br class="d-block d-lg-none">受付時間：平日&ensp;7:00-21:00&ensp;<br class="d-block d-md-none">/&ensp;土日祝&ensp;8:00-21:00</p>
-            </div>
-            <p class="text-center h5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-          </div>
-        </div><!-- /.row -->
-
-      </div><!-- /.container -->
-    </section>
-    <!----------------------------------------------->
-    <section id="sec4" class="p-5 border-bottom">
-      <div class="container">
-        <h2 class="display-4 text-center font-patrick py-3">lecturer profiles</h2>
-        <div class="row py-3">
-
-          <div class="col-lg-2 col-md-4 col-12 mb-5">
-            <img src="img/teacher-2.jpg" alt="講師の画像1" class="img-thumbnail rounded border mb-3">
-            <h3 class="h4">TEACHER'S NAME</h3>
-            <h4 class="small mb-3">せんせいのなまえ</h4>
-            <a class="btn btn-primary btn-block" href="#" role="button"><i class="fas fa-arrow-right mr-2"></i>詳細を見る</a>
-          </div><!-- /.col-lg-2 -->
-          <div class="col-lg-2 col-md-4 col-12 mb-5">
-            <img src="img/teacher-1.jpg" alt="講師の画像2" class="img-thumbnail rounded border mb-3">
-            <h3 class="h4">TEACHER'S NAME</h3>
-            <h4 class="small mb-3">せんせいのなまえ</h4>
-            <a class="btn btn-primary btn-block" href="#" role="button"><i class="fas fa-arrow-right mr-2"></i>詳細を見る</a>
-          </div><!-- /.col-lg-2 -->
-          <div class="col-lg-2 col-md-4 col-12 mb-5">
-            <img src="img/teacher-2.jpg" alt="講師の画像3" class="img-thumbnail rounded border mb-3">
-            <h3 class="h4">TEACHER'S NAME</h3>
-            <h4 class="small mb-3">せんせいのなまえ</h4>
-            <a class="btn btn-primary btn-block" href="#" role="button"><i class="fas fa-arrow-right mr-2"></i>詳細を見る</a>
-          </div><!-- /.col-lg-2 -->
-          <div class="col-lg-2 col-md-4 col-12 mb-5">
-            <img src="img/teacher-1.jpg" alt="講師の画像4" class="img-thumbnail rounded border mb-3">
-            <h3 class="h4">TEACHER'S NAME</h3>
-            <h4 class="small mb-3">せんせいのなまえ</h4>
-            <a class="btn btn-primary btn-block" href="#" role="button"><i class="fas fa-arrow-right mr-2"></i>詳細を見る</a>
-          </div><!-- /.col-lg-2 -->
-          <div class="col-lg-2 col-md-4 col-12 mb-5">
-            <img src="img/teacher-2.jpg" alt="講師の画像5" class="img-thumbnail rounded border mb-3">
-            <h3 class="h4">TEACHER'S NAME</h3>
-            <h4 class="small mb-3">せんせいのなまえ</h4>
-            <a class="btn btn-primary btn-block" href="#" role="button"><i class="fas fa-arrow-right mr-2"></i>詳細を見る</a>
-          </div><!-- /.col-lg-2 -->
-          <div class="col-lg-2 col-md-4 col-12 mb-5">
-            <img src="img/teacher-1.jpg" alt="講師の画像6" class="img-thumbnail rounded border mb-3">
-            <h3 class="h4">TEACHER'S NAME</h3>
-            <h4 class="small mb-3">せんせいのなまえ</h4>
-            <a class="btn btn-primary btn-block" href="#" role="button"><i class="fas fa-arrow-right mr-2"></i>詳細を見る</a>
-          </div><!-- /.col-lg-2 -->
-
-        </div><!-- /.row -->
-      </div><!-- /.container -->
-    </section>
-    <!----------------------------------------------->
-    <section id="sec5" class="p-5">
-      <div class="container">
-        <h2 class="display-4 text-center font-patrick py-3">NEWS</h2>
-        <div class="row py-3">
-          <div class="col-md-6 mb-2">
-            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-              <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-primary">イベント</strong>
-                <h3 class="mb-0">おすすめ記事</h3>
-                <div class="mb-1 text-muted">11月12日</div>
-                <p class="card-text mb-auto">これは、追加コンテンツへの自然なリードインとして以下のテキストをサポートして、より広いカードです。</p>
-                <a href="#"><i class="fas fa-arrow-right mr-2"></i>続きを読む</a>
-              </div>
-              <div class="col-auto d-none d-lg-block">
-                <img src="img/news-1.jpg" class="bd-placeholder-img" width="200" height="250" alt="イベント画像">
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-              <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-success">お知らせ</strong>
-                <h3 class="mb-0">記事のタイトル</h3>
-                <div class="mb-1 text-muted">11月11日</div>
-                <p class="mb-auto">これは、追加コンテンツへの自然なリードインとして以下のテキストをサポートして、より広いカードです。</p>
-                <a href="#"><i class="fas fa-arrow-right mr-2"></i>続きを読む</a>
-              </div>
-              <div class="col-auto d-none d-lg-block">
-                <img src="img/news-2.jpg" class="bd-placeholder-img" width="200" height="250" alt="お知らせ画像">
-              </div>
-            </div>
-          </div>
-        </div><!-- /.row -->
-      </div><!-- /.container -->
-    </section>
-    <!----------------------------------------------->
+    </div>
   </main>
 
+  <!----------------------------------------------->
   <footer id="footer" class="bg-light py-5">
     <!--display-4→display-5、py-5→py-1に変更-->
     <h2 class="display-5 text-center font-patrick py-1">Production Staff's SNS</h2>
     <div class="container py-4 py-md-5">
+
 
       <div id="footer-index" class="row pt-1">
         <!--pt-4→pt-1に変更-->
@@ -365,8 +115,8 @@ if (isset($_SESSION['name'])) {
           <li>JUN</li>
           <li>
             <ul class="list-unstyled">
-              <li><a href="https://twitter.com/JUN_work_life">Twitter</a></li>
-              <li><a href="https://github.com/JUN-work">GitHub</a></li>
+              <li><a href="https://twitter.com/JUN_work_life" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+              <li><a href="https://github.com/JUN-work" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             </ul>
           </li>
         </ul>
@@ -374,8 +124,8 @@ if (isset($_SESSION['name'])) {
           <li>Yuki.Ishizaki</li>
           <li>
             <ul class="list-unstyled">
-              <li><a href="https://twitter.com/zakky0519">Twitter</a></li>
-              <li><a href="https://github.com/YukiIshizaki0525">GitHub</a></li>
+              <li><a href="https://twitter.com/zakky0519" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+              <li><a href="https://github.com/YukiIshizaki0525" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             </ul>
           </li>
         </ul>
@@ -383,8 +133,8 @@ if (isset($_SESSION['name'])) {
           <li>そってぃ</li>
           <li>
             <ul class="list-unstyled">
-              <li><a href="https://twitter.com/sohhprog">Twitter</a></li>
-              <li><a href="https://github.com/sohh85">GitHub</a></li>
+              <li><a href="https://twitter.com/sohhprog" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+              <li><a href="https://github.com/sohh85" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             </ul>
           </li>
         </ul>
@@ -392,35 +142,39 @@ if (isset($_SESSION['name'])) {
           <li>綾</li>
           <li>
             <ul class="list-unstyled">
-              <li><a href="https://twitter.com/yanagi4939">Twitter</a></li>
-              <li><a href="https://github.com/AYA-kurokiri09">GitHub</a></li>
+              <li><a href="https://twitter.com/yanagi4939" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+              <li><a href="https://github.com/AYA-kurokiri09" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             </ul>
           </li>
         </ul>
         <ul class="col list-unstyled">
-
-          <li><a href="./contact/index.php">お問い合わせはこちら</a></li>
-          <!--contactフォルダ内のindex.php(お問い合わせページ)に飛びます-->
+          <li><button type="button" class="btn btn-light">
+              <a href="./contact/index.html">お問い合わせはこちら</a></button>
+          </li>
+          <!--contactフォルダ内のindex.html(お問い合わせページテンプレ)に飛びます-->
         </ul>
       </div><!-- /.footer-index -->
-
-      <div id="footer-logo" class="mt-2 mt-sm-4">
-        <div class="text-center d-sm-flex align-items-sm-center">
-          <a class="mr-4" href="index.html"><img src="img/logo.png" alt="サイト名" height="50"></a>
-          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-        </div>
-      </div><!-- .row -->
     </div><!-- .container -->
   </footer>
 
   <div class="text-white bg-primary">
-    <p class="text-center mb-0 py-2"><small>Copyright (C) サイト名. All Rights Reserved.</small></p>
+    <p class="text-center mb-0 py-2">
+      <small>Copyright (C) SE2. All Rights Reserved.</small>
+    </p>
   </div>
+
+  <div class="start">
+    <div class="start-inner">
+      <img src="/img/SE2.png" alt="">
+    </div>
+  </div>
+
   <!----------------------------------------------->
   <!-- javascript はここから -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
   <!----------------------------------------------->
 </body>
 
