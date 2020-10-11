@@ -19,6 +19,18 @@
   margin-bottom: 16px !important;
 }
 
+.mb-md {
+  margin-bottom: 32px !important;
+}
+
+.pb-sm {
+  padding-bottom: 16px !important;
+}
+
+.pb-md {
+  padding-bottom: 32px !important;
+}
+
 .p-sm {
   padding: 10px !important;
 }
@@ -29,6 +41,11 @@
   max-width: $contentMaxWidth;
 }
 
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
 .border {
   border-bottom: 2px solid #e6e9ed;
 }
@@ -37,19 +54,16 @@ main {
   background-color: $BgGray;
 }
 
-.subHeader {
-  @extend .font-lg;
-}
+.subheader {
+  @extend .mb-sm;
+  background-color: $BgGray;
+  border-bottom: 7px solid $HeaderBorderColor;
+  padding: 1.1em 0.625em 0;
 
-.main-title {
-  @extend .font-lg;
-  font-weight: 600;
-  margin-bottom: 0;
-}
-
-.sub-title {
-  @extend .font-sm;
-  color: $SubTitle;
+  & h2 {
+    font-size: 2em;
+    font-weight: 600;
+  }
 }
 
 .is-hidden a {
@@ -58,6 +72,18 @@ main {
 
 .questions {
   @extend .content-width;
+
+  & .main-title {
+    @extend .font-lg;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  & .sub-title {
+    @extend .font-sm;
+    @extend .mb-sm;
+    color: $SubTitle;
+  }
 
   &__title {
     @extend .font-lr;
@@ -103,4 +129,83 @@ main {
       }
     }
   }
+
+  &__item {
+    @extend .pb-md;
+    @extend .mb-md;
+    border-bottom: 1px dashed $BorderBottomColor;
+    box-sizing: border-box;
+
+    span {
+      @extend .font-md;
+    }
+  }
+
+  // 問題文ここから
+  &__sentence {
+    @extend .font-md;
+    @extend .mb-sm;
+  }
+
+  &__number {
+    display: block;
+    float: left;
+    color: $White;
+    text-align: center;
+    background: $QuestionNumberColor;
+    border-radius: 50%;
+    height: 2em;
+    width: 2em;
+    padding: 0;
+    margin: -0.25em 0.5em 0 0;
+    line-height: 2em;
+  }
+  // 問題文ここまで
+
+  // 選択式 ここから
+  &__choice {
+    @extend .mb-sm;
+    display: block;
+    list-style: none;
+    padding: 16px;
+    border: 1px solid $SelectBorderColor;
+    background-color: $SelectBgColor;
+    border-radius: 8px;
+    box-sizing: border-box;
+    max-width: 436px;
+    width: auto;
+
+    &:hover {
+      border: 1px solid $RadioButtonCheckedColor;
+    }
+
+    label {
+      margin: 0 auto;
+    }
+  }
+  // 選択式 ここまで
+
+  // 記述式 ここから
+  &__description {
+    @extend .content-width;
+    @extend .font-md;
+    @extend .mb-sm;
+
+    input[type="text"] {
+      @extend .content-width;
+      display: inline-block;
+      width: 100%;
+      height: 50px;
+      box-sizing: border-box;
+      outline: none;
+      border: 1px solid $SelectBorderColor;
+      border-radius: 8px;
+      padding: 10px;
+
+      &:focus {
+        border: 1px solid $RadioButtonCheckedColor;
+      }
+    }
+  }
+  // 記述式 ここまで
 }
