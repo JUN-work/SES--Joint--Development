@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (isset($_SESSION['name'])) {
+  $userName = $_SESSION['name'];
+} else {
+  $userName = "ゲストユーザー";
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -21,23 +31,22 @@
   <meta name="twitter:card" content="Twitterカードの種類">
   <meta name="twitter:site" content="@ユーザー名">
   <!-- スタイルシートはここから -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
 </head>
 
 <body id="page-top">
   <!----------------------------------------------->
-  <header>
+  <header class="bg-light">
 
     <nav>
       <div class="container navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand mr-auto" href="index.html"><img src="img/logo.png" alt="サイト名" height="50"></a>
-        <a href="register.php" class="btn btn-secondary btn-lg mr-1 text-white">新規登録</a>
-        <a href="login.php" class="btn btn-primary btn-lg mr-1 text-white">ログイン</a>
+        <p class="pr-4 m-0 text-white">ようこそ<u><?= ($userName); ?></u>さん</p>
+        <a href="user_chk/regist_mail.php" class="btn btn-light btn-lg mr-1 text-muted">新規登録</a>
+        <a href="user_chk/login.php" class="btn btn-info btn-lg mr-1">ログイン</a>
       </div>
     </nav>
 
@@ -61,8 +70,7 @@
           <p class="text-center text-white bg-primary py-2 px-4 mb-0 align-self-stretch">お知らせ</p>
           <p class="py-2 px-2 px-lg-4 mb-0"><span class="d-block d-lg-inline-block mr-lg-4">2018/12/01</span>Lorem ipsum
             dolor sit amet, consectetur adipisicing elit, se.</p>
-          <p class="pb-2 py-lg-2 px-2 px-lg-4 ml-auto mb-0"><a href="#" class="icon-link"><i
-                class="fas fa-list-ul mr-2"></i>一覧を見る</a></p>
+          <p class="pb-2 py-lg-2 px-2 px-lg-4 ml-auto mb-0"><a href="#" class="icon-link"><i class="fas fa-list-ul mr-2"></i>一覧を見る</a></p>
         </div>
       </section>
     </div><!-- /.container -->
@@ -249,16 +257,11 @@
               sed do eiusmod.
             </p>
             <div class="text-center">
-              <a href="contact/index.html"
-                class="btn btn-warning btn-lg p-3 mb-3 mr-lg-3 text-white font-weight-bold"><i
-                  class="fas fa-arrow-right mr-3"></i>無料体験レッスンのお申込み</a>
-              <a href="contact/index.html" class="btn btn-primary btn-lg p-3 mb-3 font-weight-bold"><i
-                  class="fas fa-arrow-right mr-3"></i>資料請求のお申込み</a>
+              <a href="contact/index.html" class="btn btn-warning btn-lg p-3 mb-3 mr-lg-3 text-white font-weight-bold"><i class="fas fa-arrow-right mr-3"></i>無料体験レッスンのお申込み</a>
+              <a href="contact/index.html" class="btn btn-primary btn-lg p-3 mb-3 font-weight-bold"><i class="fas fa-arrow-right mr-3"></i>資料請求のお申込み</a>
             </div>
             <div class="border border-dark text-center p-3">
-              <p class="h5">お問合せ：<strong class="h5 tel text-danger mr-lg-3">0120-000-000</strong><br
-                  class="d-block d-lg-none">受付時間：平日&ensp;7:00-21:00&ensp;<br
-                  class="d-block d-md-none">/&ensp;土日祝&ensp;8:00-21:00</p>
+              <p class="h5">お問合せ：<strong class="h5 tel text-danger mr-lg-3">0120-000-000</strong><br class="d-block d-lg-none">受付時間：平日&ensp;7:00-21:00&ensp;<br class="d-block d-md-none">/&ensp;土日祝&ensp;8:00-21:00</p>
             </div>
             <p class="text-center h5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
           </div>
@@ -318,8 +321,7 @@
         <h2 class="display-4 text-center font-patrick py-3">NEWS</h2>
         <div class="row py-3">
           <div class="col-md-6 mb-2">
-            <div
-              class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
               <div class="col p-4 d-flex flex-column position-static">
                 <strong class="d-inline-block mb-2 text-primary">イベント</strong>
                 <h3 class="mb-0">おすすめ記事</h3>
@@ -333,8 +335,7 @@
             </div>
           </div>
           <div class="col-md-6 mb-2">
-            <div
-              class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
               <div class="col p-4 d-flex flex-column position-static">
                 <strong class="d-inline-block mb-2 text-success">お知らせ</strong>
                 <h3 class="mb-0">記事のタイトル</h3>
@@ -417,15 +418,9 @@
   </div>
   <!----------------------------------------------->
   <!-- javascript はここから -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <!----------------------------------------------->
 </body>
 

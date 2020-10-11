@@ -5,13 +5,23 @@ body {
     font-size: 18px;
 }
 
+/* urlはみ出し防止（実際はメール送信するので要らない） */
+a {
+   word-break: break-all;
+}
+
 .head h1 {
     padding-left: 20px;
     margin: 10px;
 }
 
-.yellow-btn {
-    background: #FFFF99;
+.confirm-btn {
+    background: #FFCC66;
+}
+
+.return-btn {
+    background: #F06060;
+    color: white;
 }
 
 .wrapper {
@@ -31,3 +41,4 @@ body {
 .form-wrapper {
     padding: 30px 46px;
 }
+
