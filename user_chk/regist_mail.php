@@ -29,7 +29,7 @@ header('X-FRAME-OPTIONS: SAMEORIGIN');
             <form action="regist_mail_chk.php" method="post">
 
                 <div class="form-group mb-4">
-                    <label for="mail" class="m-0">メールアドレス <span class="text-danger">*</span></label>
+                    <label for="mail" class="small m-0">メールアドレス <span class="text-danger">*</span></label>
                     <input type="text" name="mail" id="mail" class="form-control">
                 </div>
 

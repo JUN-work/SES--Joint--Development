@@ -25,7 +25,7 @@ if (empty($mail) || !preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_
     $errors['mail'] = "メールアドレスを正しい形式で入力してください。";
 } else {
     // 本登録テーブル重複チェック
-    $stmt = $dbh->prepare('SELECT COUNT(*) AS cnt FROM users WHERE mail=:mail');
+    $stmt = $dbh->prepare("SELECT COUNT(*) AS cnt FROM users WHERE mail=:mail");
     $stmt->bindValue(':mail', $mail, PDO::PARAM_STR);
     $stmt->execute();
     $record = $stmt->fetch();
@@ -33,7 +33,7 @@ if (empty($mail) || !preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_
         $errors['mail_check'] = "既に登録されたメールアドレスです。";
     } else {
         // 仮登録テーブル重複チェック
-        $stmt = $dbh->prepare('SELECT * FROM pre_users WHERE mail=:mail');
+        $stmt = $dbh->prepare("SELECT * FROM pre_users WHERE mail=:mail");
         $stmt->bindValue(':mail', $mail, PDO::PARAM_STR);
         $stmt->execute();
         $check = $stmt->fetch();
@@ -43,7 +43,7 @@ if (empty($mail) || !preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_
             $pre_date = $check['date'];
             // URLの期限が登録切れの場合、再登録の為に仮登録データ削除
             if ($pre_date < date("Y-m-d H:i:s", strtotime("-1 day"))) {
-                $stmt = $dbh->prepare('DELETE FROM pre_users WHERE mail=:mail');
+                $stmt = $dbh->prepare("DELETE FROM pre_users WHERE mail=:mail");
                 $stmt->bindValue(':mail', $mail, PDO::PARAM_STR);
                 $stmt->execute();
             }

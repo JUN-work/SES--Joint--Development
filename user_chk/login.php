@@ -14,6 +14,7 @@ require_once 'function.php';
 if (isset($_POST['login'])) {
     $mail = $_POST['mail'];
 
+    // メールアドレスチェック
     if (empty($mail)) {
         $errors['mail'] = 'blank_mail';
     } elseif (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/", $mail)) {
@@ -28,6 +29,7 @@ if (isset($_POST['login'])) {
         }
     }
 
+    // パスワードチェック
     if (!empty($mail) && !empty($_POST['password'])) {
         $stmt = $dbh->prepare('SELECT * FROM users WHERE mail = :mail');
         $stmt->bindValue(':mail', $mail, PDO::PARAM_STR);
@@ -35,8 +37,8 @@ if (isset($_POST['login'])) {
         $user = $stmt->fetch();
         // メールアドレスが正しい場合は次の処理に
         if ($user) {
+            // password_hash関数でハッシュ化したものと一致するかチェック
             if (password_verify($_POST['password'], $user['password'])) {
-                // index.phpで名前表示するため
                 $_SESSION['name'] = $user['name'];
                 header('Location: ../index.php');
                 exit();
@@ -71,7 +73,7 @@ if (isset($_POST['login'])) {
 
             <form action="" method="post">
                 <div class="form-group">
-                    <label for="mail" class="m-0">メールアドレス <span class="text-danger">*</span></label>
+                    <label for="mail" class="small m-0">メールアドレス <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="mail" name="mail" value="<?= h($mail); ?>">
 
                     <?php if ($errors['mail'] === 'blank_mail') : ?>
@@ -86,14 +88,14 @@ if (isset($_POST['login'])) {
                 </div>
 
                 <div class="form-group mb-4">
-                    <label for="password" class="m-0">パスワード <span class="text-danger">*</span></label>
+                    <label for="password" class="small m-0">パスワード <span class="text-danger">*</span></label>
                     <input type="password" class="form-control" id="password" name="password" value="<?= h($_POST['password']); ?>">
 
                     <?php if ($errors['password'] === 'blank_password') : ?>
                         <p class="text-danger">*パスワードを入力してください。</p>
                     <?php endif; ?>
                     <?php if ($errors['password'] === 'failed_password') : ?>
-                        <p class="text-danger">*パスワードが間違えています。</p>
+                        <p class="text-danger">*正しいパスワードを入力してください。</p>
                     <?php endif; ?>
                 </div>
 

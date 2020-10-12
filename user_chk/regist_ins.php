@@ -29,7 +29,6 @@ $name = $_SESSION['name'];
 $password_hash =  password_hash($_SESSION['password'], PASSWORD_DEFAULT);
 
 try {
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $dbh->beginTransaction();
     //usersテーブルに本登録
     $stmt = $dbh->prepare("INSERT INTO users (name,mail,password) VALUES (:name,:mail,:password_hash)");

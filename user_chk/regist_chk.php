@@ -81,9 +81,9 @@ if (count($errors) === 0) {
             <?php if (count($errors) === 0) : ?>
 
                 <form action="regist_ins.php" method="post">
-                    <p>メールアドレス：<?= h($_SESSION['mail']); ?></p>
-                    <p>アカウント名：<?= h($name); ?></p>
-                    <p>パスワード：<?= $password_hide ?></p>
+                    <p><span class="text-muted">メールアドレス：</span><?= h($_SESSION['mail']); ?></p>
+                    <p><span class="text-muted">アカウント名：</span><?= h($name); ?></p>
+                    <p><span class="text-muted">パスワード：</span><?= $password_hide ?></p>
 
                     <input type="hidden" name="token" value="<?= $_POST['token'] ?>">
                     <input type="submit" value="登録する" class="btn btn-block btn-success">
