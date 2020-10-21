@@ -1,13 +1,3 @@
-<?php
-session_start();
-
-if (isset($_SESSION['name'])) {
-  $userName = $_SESSION['name'];
-} else {
-  $userName = "ゲストユーザー";
-}
-
-?>
 <!DOCTYPE html>
 <html>
 
@@ -43,7 +33,6 @@ if (isset($_SESSION['name'])) {
         <a class="navbar-brand mr-auto" href="index.php">
           <img src="img/SE2.png" alt="サイト名" height="70" />
         </a>
-        <p class="pr-4 m-0 text-white">ようこそ<u><?= ($userName); ?></u>さん</p>
         <a href="user_chk/regist_mail.php" class="btn btn-light btn-lg mr-1 text-muted">新規登録</a>
         <a href="user_chk/login.php" class="btn btn-info btn-lg mr-1">ログイン</a>
       </div>

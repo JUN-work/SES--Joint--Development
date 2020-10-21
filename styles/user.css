@@ -1,8 +1,13 @@
-/* ログイン・登録画面 */
+/* login.phpとregister.phpのスタイル。あとでまとめます */
 
 body {
     background: #4696e5;
     font-size: 18px;
+}
+
+/* urlはみ出し防止（実際はメール送信するので要らない） */
+a {
+   word-break: break-all;
 }
 
 .head h1 {
@@ -10,13 +15,18 @@ body {
     margin: 10px;
 }
 
-.yellow-btn {
-    background: #FFFF99;
+.confirm-btn {
+    background: #FFCC66;
+}
+
+.return-btn {
+    background: #F06060;
+    color: white;
 }
 
 .wrapper {
     width: 700px;
-    margin: 40px auto;
+    margin: 60px auto;
     border-radius: 5px;
     background: #EEEEEE;
 }
@@ -31,3 +41,4 @@ body {
 .form-wrapper {
     padding: 30px 46px;
 }
+
