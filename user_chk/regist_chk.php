@@ -1,65 +1,56 @@
 <?php
 session_start();
-
 header("Content-type: text/html; charset=utf-8");
-
-//クロスサイトリクエストフォージェリ（CSRF）対策のトークン判定
-if ($_POST['token'] != $_SESSION['token']) {
-    header("Location: regist_mail.php");
-    exit();
-}
-
-//クリックジャッキング対策
 header('X-FRAME-OPTIONS: SAMEORIGIN');
 
-require_once 'function.php';
+require_once '../function.php';
+require_once '../pdo_connect.php';
 
-//前後にある半角全角スペースを削除する関数
-function spaceTrim($str)
-{
-    // 行頭
-    $str = preg_replace('/^[ ]+/u', '', $str);
-    // 末尾
-    $str = preg_replace('/[ ]+$/u', '', $str);
-    return $str;
-}
 
-//エラーメッセージの初期化
-$errors = array();
+$password = $_SESSION['password'];
+$password_hide = str_repeat('*', strlen($password));
+$urltoken = $_SESSION['urltoken'];
 
-if (empty($_POST)) {
-    header("Location: regist_mail.php");
-    exit();
-} else {
-    //POSTされたデータを各変数に入れる
-    $name = isset($_POST['name']) ? $_POST['name'] : NULL;
-    $password = isset($_POST['password']) ? $_POST['password'] : NULL;
+$mail = $_SESSION['mail'];
+$name = $_SESSION['name'];
+$error;
 
-    //前後にある半角全角スペースを削除
-    $name = spaceTrim($name);
-    $password = spaceTrim($password);
+// 登録ボタン押されたら次の処理へ
+if (isset($_POST['submit_info'])) {
 
-    //アカウント入力判定
-    if ($name == '') :
-        $errors['name'] = "ユーザーネームが入力されていません。";
-    elseif (mb_strlen($name) > 20) :
-        $errors['name_length'] = "ユーザーネームは20文字以内で入力して下さい。";
-    endif;
+    try {
+        $dbh->beginTransaction();
+        //パスワードのハッシュ化
+        $password_hash =  password_hash($_SESSION['password'], PASSWORD_DEFAULT);
+        //usersテーブルに本登録
+        $stmt = $dbh->prepare("INSERT INTO users (name,mail,password) VALUES (:name,:mail,:password_hash)");
+        $stmt->bindValue(':name', $name, PDO::PARAM_STR);
+        $stmt->bindValue(':mail', $mail, PDO::PARAM_STR);
+        $stmt->bindValue(':password_hash', $password_hash, PDO::PARAM_STR);
+        $stmt->execute();
 
-    //パスワード入力判定
-    if ($password == '') :
-        $errors['password'] = "パスワードが入力されていません。";
-    elseif (!preg_match('/^[0-9a-zA-Z]{5,20}$/', $_POST["password"])) :
-        $errors['password_length'] = "パスワードは半角英数字を使用し、5文字以上20文字以下で入力して下さい。";
-    else :
-        $password_hide = str_repeat('*', strlen($password));
-    endif;
-}
+        //pre_usersのflagを1にする
+        $stmt = $dbh->prepare("UPDATE pre_users SET flag=1 WHERE mail=(:mail)");
+        $stmt->bindValue(':mail', $mail, PDO::PARAM_STR);
+        $stmt->execute();
 
-//エラーが無ければセッションに登録
-if (count($errors) === 0) {
-    $_SESSION['name'] = $name;
-    $_SESSION['password'] = $password;
+        //セッション削除
+        $_SESSION = array();
+        // session_destroy();
+
+        $_SESSION['user']['mail'] = $mail;
+        $dbh->commit();
+
+        // 完了画面へリダイレクト
+        header("Location: regist_ins.php");
+        exit();
+    } catch (PDOException $e) {
+        $dbh->rollBack();
+        $error = "登録に失敗しました。もう一度お願いします。";
+        echo 'Error:' . $e->getMessage();
+    }
+    //データベース接続切断
+    $dbh = null;
 }
 ?>
 
@@ -67,9 +58,12 @@ if (count($errors) === 0) {
 <html>
 
 <head>
-    <title>メール登録画面</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/user.css" />
+    <title>会員情報確認 -Study English Site for Engineers-</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/user.css">
+    <link rel="stylesheet" href="../styles/top.css">
 </head>
 
 <body>
@@ -78,32 +72,27 @@ if (count($errors) === 0) {
             <h1>会員登録確認画面</h1>
         </div>
         <div class="form-wrapper">
-            <?php if (count($errors) === 0) : ?>
 
-                <form action="regist_ins.php" method="post">
-                    <p><span class="text-muted">メールアドレス：</span><?= h($_SESSION['mail']); ?></p>
-                    <p><span class="text-muted">アカウント名：</span><?= h($name); ?></p>
-                    <p><span class="text-muted">パスワード：</span><?= $password_hide ?></p>
+            <form action="" method="post">
 
-                    <input type="hidden" name="token" value="<?= $_POST['token'] ?>">
-                    <input type="submit" value="登録する" class="btn btn-block btn-success">
-                    <hr class="my-3">
-                    <input type="button" value="戻る" onClick="history.back()" class="btn btn-danger btn-block return-btn">
-                </form>
+                <ul class="list-group mb-5">
+                    <li class="list-group-item list-group-item-secondary"><span class="text-muted">Email</span> : <?= h($_SESSION['mail']); ?></li>
+                    <li class="list-group-item list-group-item-secondary"><span class="text-muted">Name</span> : <?= h($_SESSION['name']); ?></li>
+                    <li class="list-group-item list-group-item-secondary"><span class="text-muted">Password</span> : <?= $password_hide ?></li>
+                </ul>
 
-            <?php elseif (count($errors) > 0) : ?>
+                <?php if (isset($error)) : ?>
+                    <p class="text-danger"><?= $error ?></p>
+                <?php endif; ?>
 
-                <?php
-                foreach ($errors as $value) {
-                    echo "<p class='text-danger'>*" . $value . "</p>";
-                }
-                ?>
+                <input type="submit" name="submit_info" value="登録する" class="btn btn-block btn-success">
+                <hr class="my-3">
+                <a href="regist.php?urltoken=<?= $urltoken ?>" class="btn btn-danger btn-block return-btn">戻る</a>
+            </form>
 
-                <input type="button" value="戻る" onClick="history.back()" class="btn btn-danger btn-block return-btn">
-
-            <?php endif; ?>
         </div>
     </div>
+    <?php include("../footer.php"); ?>
 </body>
 
 </html>
