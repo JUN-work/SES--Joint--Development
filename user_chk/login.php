@@ -1,7 +1,5 @@
 <?php
 session_start();
-header("Content-type: text/html; charset=utf-8");
-header('X-FRAME-OPTIONS: SAMEORIGIN');
 
 // ログアウトボタンが押された後の処理
 if (isset($_GET['logout'])) {
@@ -102,6 +100,9 @@ function verifyPassword($user)
 
             <?php if (isset($_GET['logout'])) : ?>
                 <div class="alert alert-primary mb-3" role="alert">ログアウトしました</div>
+            <?php endif; ?>
+            <?php if (isset($_GET['after_register'])) : ?>
+                <div class="alert alert-primary mb-3" role="alert">登録ありがとうございます<br>下記フォームよりログインしてください</div>
             <?php endif; ?>
 
             <p>メールアドレスとパスワードを記入してログインしてください。<br>

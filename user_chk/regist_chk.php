@@ -1,7 +1,5 @@
 <?php
 session_start();
-header("Content-type: text/html; charset=utf-8");
-header('X-FRAME-OPTIONS: SAMEORIGIN');
 
 require_once '../function.php';
 require_once '../pdo_connect.php';
@@ -41,13 +39,14 @@ if (isset($_POST['submit_info'])) {
         $_SESSION['user']['mail'] = $mail;
         $dbh->commit();
 
-        // 完了画面へリダイレクト
-        header("Location: regist_ins.php");
+        // ログイン画面へリダイレクト
+        header("Location: login.php?after_register");
         exit();
     } catch (PDOException $e) {
         $dbh->rollBack();
         $error = "登録に失敗しました。もう一度お願いします。";
-        echo 'Error:' . $e->getMessage();
+        echo $e->getMessage();
+        exit();
     }
     //データベース接続切断
     $dbh = null;
