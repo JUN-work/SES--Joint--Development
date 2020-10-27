@@ -22,7 +22,7 @@ session_start();  //セッションを使う
         </div>
         <div class=form-wrapper>
             <h2 class="sample-subtitle pb-2">送信完了しました。</h2>
-            <a href="../index.html">
+            <a href="../contact_top.html">
             <button type="submit" class="btn btn-primary btn-block">トップに戻る</button>
             </a>
         </div>

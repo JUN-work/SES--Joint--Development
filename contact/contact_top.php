@@ -35,7 +35,7 @@ if(isset($_POST['confirm'])){ //確認ボタンを押してポストしたもの
     //エラーが無ければ入力内容をセッションに保存して確認画面へ
     if (!$error_flg){
         $_SESSION['inquiry'] = $_POST;
-        header('Location: confirm_contact.php');
+        header('Location: contact_confirm.php');
         exit();
     }
 }
@@ -65,7 +65,7 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] === 'rewrite'){
         <h2 class="sample-subtitle">お問い合わせフォーム</h2>
         
         <p style="color: red"><?php echo $errorMessage ?></p>  <!-- エラーメッセージ表示 -->
-        <form class="col-lg-6 mr-lg-auto px-0" method="post" action="index.php">
+        <form class="col-lg-6 mr-lg-auto px-0" method="post" action="contact_top.php">
           <div class="form-group">
             <label for="formName">お名前 <span class="text-danger">*</span></label>
             <input type="text" class="form-control" id="formName" name="formName" 

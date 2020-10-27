@@ -50,7 +50,7 @@ $formContent = htmlspecialchars($_SESSION['inquiry']['formContent'],ENT_QUOTES, 
           <button type="submit" name="submit" class="btn btn-danger btn-block">送信</button>
         </form>
 
-          <div><button class="btn btn-secondary btn-block mt-2"><a href="index.php?action=rewrite" class="text-light">書き直す</a></button>
+          <div><button class="btn btn-secondary btn-block mt-2"><a href="contact_top.php?action=rewrite" class="text-light">書き直す</a></button>
         </div>
       </div>
     </div>
