@@ -66,18 +66,19 @@ if (isset($_POST['submit_info'])) {
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="head">
+    <div class="wrapper border border-secondary">
+
+        <div class="head border-bottom border-secondary">
             <h1>会員登録確認画面</h1>
         </div>
-        <div class="form-wrapper">
 
+        <div class="form-wrapper">
             <form action="" method="post">
 
-                <ul class="list-group mb-5">
-                    <li class="list-group-item list-group-item-secondary"><span class="text-muted">Email</span> : <?= h($_SESSION['mail']); ?></li>
-                    <li class="list-group-item list-group-item-secondary"><span class="text-muted">Name</span> : <?= h($_SESSION['name']); ?></li>
-                    <li class="list-group-item list-group-item-secondary"><span class="text-muted">Password</span> : <?= $password_hide ?></li>
+                <ul class="list-group list-group-flush mb-5">
+                    <li class="list-group-item"><span class="text-muted">Email</span> : <?= h($_SESSION['mail']); ?></li>
+                    <li class="list-group-item"><span class="text-muted">Name</span> : <?= h($_SESSION['name']); ?></li>
+                    <li class="list-group-item"><span class="text-muted">Password</span> : <?= $password_hide ?></li>
                 </ul>
 
                 <?php if (isset($error)) : ?>

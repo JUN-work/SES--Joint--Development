@@ -133,9 +133,9 @@ function checkPreStatus()
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper border border-secondary">
 
-        <div class="head">
+        <div class="head border-bottom border-secondary">
             <h1>メール登録画面</h1>
         </div>
 

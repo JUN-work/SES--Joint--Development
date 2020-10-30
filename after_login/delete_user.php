@@ -48,9 +48,9 @@ if (isset($_POST['user_delete']) && $_POST['user_delete'] === '1') {
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper border border-secondary">
 
-        <div class="head">
+        <div class="head border-bottom border-secondary">
             <h1>退会画面</h1>
         </div>
 
