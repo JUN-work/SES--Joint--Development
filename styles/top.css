@@ -21,7 +21,7 @@ a:hover { color: #a9a9a9; }
 
 /* body部分 */
 
-header{
+/* header{
   background-image: url(/img/SE2_header2.png);
   height: 100px;
   padding: 2px auto;
@@ -29,7 +29,7 @@ header{
 
 header img{
   margin: auto;
-}
+} */
 
 .main-top{
   background-image: url(/img/SE2_Top.png);
