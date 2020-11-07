@@ -1,4 +1,8 @@
 // スマホ表示時のフォントサイズ
+body {
+  background-color: $White !important;
+}
+
 .font-sm {
   font-size: 14px;
 }
@@ -23,10 +27,82 @@
   padding: 10px !important;
 }
 
+.main-top {
+  background-image: url(/img/SE2_Top.png);
+}
+
 .content-width {
   width: 90%;
   margin: 0 auto;
   max-width: $contentMaxWidth;
+}
+
+#container {
+  position: relative;
+  z-index: 5;
+  transition: all 0.5s;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $navHeight;
+  background-image: url(/img/SE2_header2.png);
+  display: flex;
+  align-items: center;
+  z-index: 10;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @extend .content-width;
+  }
+
+  &__nav {
+    display: none;
+  }
+
+  &__ul {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__li {
+    @extend .font-md;
+    font-weight: bold;
+    margin-left: 20px;
+
+    & > a {
+      color: $Black;
+      text-decoration: none !important;
+
+      &:hover {
+        color: $White;
+        transition: all 0.3s;
+      }
+    }
+  }
+}
+
+.logo {
+  height: 70px;
+  width: 100px;
+
+  & a > img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.main-top {
+  padding-top: $navHeight;
 }
 
 .border {
