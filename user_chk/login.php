@@ -1,7 +1,5 @@
 <?php
 session_start();
-header("Content-type: text/html; charset=utf-8");
-header('X-FRAME-OPTIONS: SAMEORIGIN');
 
 // ログアウトボタンが押された後の処理
 if (isset($_GET['logout'])) {
@@ -16,6 +14,8 @@ if (isset($_SESSION['user'])) {
 require_once '../pdo_connect.php';
 require_once '../function.php';
 
+require_once 'twitter_login.php'; // twitter apiの設定読み込み
+
 // エラーに使用する変数をグローバルスコープに定義
 $errors_password;
 $errors_mail;
@@ -26,7 +26,7 @@ if (isset($_POST['login'])) {
     $mail = $_POST['mail'];
 
     if (checkEmail($mail)) {   //メール形式確認
-        $user = getUserByEmail($mail);   //登録済みメールか確認
+        $user = getUserByEmail($mail);  //登録済みメールか確認
         if (empty($user)) {
             $errors_mail = '<p class="text-danger">*登録されていないメールアドレスです</p>';
         } elseif (verifyPassword($user)) {
@@ -85,23 +85,25 @@ function verifyPassword($user)
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/user.css">
     <link rel="stylesheet" href="../styles/top.css">
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper border border-secondary">
 
-        <div class="head">
+        <div class="head border-bottom border-secondary">
             <h1>ログインする</h1>
         </div>
-
-
 
         <div class="form-wrapper">
 
             <?php if (isset($_GET['logout'])) : ?>
                 <div class="alert alert-primary mb-3" role="alert">ログアウトしました</div>
+            <?php endif; ?>
+            <?php if (isset($_GET['after_register'])) : ?>
+                <div class="alert alert-primary mb-3" role="alert">登録ありがとうございます<br>下記フォームよりログインしてください</div>
             <?php endif; ?>
 
             <p>メールアドレスとパスワードを記入してログインしてください。<br>
@@ -125,6 +127,30 @@ function verifyPassword($user)
             </form>
 
             <hr class="my-3">
+
+            <!--横並びボタン  mdサイズより横幅が大きい場合ここを表示-->
+            <div class="d-none d-md-block">
+                <div class="d-flex justify-content-between">
+                    <!-- Twitterログイン -->
+                    <a href="<?php echo $oauthUrl; ?>" class="btn btn-outline-info btn-lg sns">
+                        <i class="fab fa-twitter white"></i> Log in with Twitter</a>
+                    <!-- Facebookでログイン -->
+                    <a href="FBLogin.php" class="btn btn-outline-primary btn-lg sns"> Log in with Facebook</a>
+                </div>
+            </div>
+            <!--縦並びボタン  mdサイズより横幅が小さい場合ここを表示-->
+            <div class="d-block d-md-none">
+                <div class="d-flex flex-column">
+                    <!-- Twitterログイン -->
+                    <a href="<?php echo $oauthUrl; ?>" class="btn btn-outline-info btn-lg sns">
+                        <i class="fab fa-twitter white"></i> Log in with Twitter</a>
+                    <!-- Facebookでログイン -->
+                    <a href="FBLogin.php" class="btn btn-outline-primary btn-lg sns"> Log in with Facebook</a>
+                </div>
+            </div>
+
+            <hr class="my-3">
+
             <a href="../index.php" class="btn btn-danger btn-block return-btn">戻る</a>
         </div>
     </div>

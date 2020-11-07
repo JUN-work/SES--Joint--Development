@@ -1,7 +1,5 @@
 <?php
 session_start();
-header("Content-type: text/html; charset=utf-8");
-header('X-FRAME-OPTIONS: SAMEORIGIN');
 
 /* 未ログイン状態ならトップへリダイレクト */
 if (!isset($_SESSION['user'])) {
@@ -50,14 +48,14 @@ if (isset($_POST['user_delete']) && $_POST['user_delete'] === '1') {
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper border border-secondary">
 
-        <div class="head">
+        <div class="head border-bottom border-secondary">
             <h1>退会画面</h1>
         </div>
 
         <div class="form-wrapper">
-            <p class="lead mb-4">会員情報を削除しますか？</p>
+            <p class="lead mb-4">アプリの使用を辞めますか？</p>
             <form action="" method="POST">
                 <input type="hidden" name="user_delete" value="1">
                 <input type="submit" id="delete" value="退会する" class="btn btn-light btn-block">
@@ -70,7 +68,7 @@ if (isset($_POST['user_delete']) && $_POST['user_delete'] === '1') {
     <?php include("../footer.php"); ?>
     <script>
         $('#delete').click(function() {
-            if (!confirm('入力に間違いは無いですか？')) {
+            if (!confirm('会員情報を削除しますか？')) {
                 return false; // 「キャンセル」をクリックしても何も起きない
             }
         });

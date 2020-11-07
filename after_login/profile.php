@@ -1,7 +1,5 @@
 <?php
 session_start();
-header("Content-type: text/html; charset=utf-8");
-header('X-FRAME-OPTIONS: SAMEORIGIN');
 
 require_once '../function.php';
 
@@ -29,9 +27,9 @@ $mail = $_SESSION['user']['mail'];
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper border border-secondary">
 
-        <div class="head">
+        <div class="head border-bottom border-secondary">
             <h1>Profile</h1>
         </div>
 

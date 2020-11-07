@@ -1,13 +1,12 @@
-
 body {
-    background: #4696e5;
-    font-size: 18px;
+    font-size: 17px;
+    background: #CCCCCC;
 }
 
-
 .head h1 {
-    padding-left: 20px;
-    margin: 10px;
+    margin: 9px;
+    text-align: center;
+    font-size: 24px;
 }
 
 .confirm-btn {
@@ -21,24 +20,47 @@ body {
 
 .wrapper {
     width: 80%;
-    max-width: 600px;
+    max-width: 580px;
     margin: 60px auto;
     border-radius: 5px;
-    background: #EEEEEE;
+    background-color: #f8f8f8;
 }
 
 .head {
-    color: #fff;
     padding: 10px;
     border-radius: 5px 5px 0 0;
-    background: #CCCCCC;
+    background-color: #f8f8f8;
 }
 
 .form-wrapper {
     padding: 30px 46px;
 }
 
-.btn{
+.btn {
     border-radius: 20px;
     transition: .4s ease-out;
+    margin: 7px 0;
+}
+
+
+.sns {
+    border-radius: 10px;
+    background-color: white;
+    width: 49%;
+}
+
+@media (max-width: 768px) {
+  /* xs スマートフォン向け */
+  p {
+      font-size: 14px;
+  }
+  .sns {
+      font-size: 16px;
+      width: 100%;
+
+  }
+
+  .form-group {
+      margin-bottom: 5px;
+  }
 }
