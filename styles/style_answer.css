@@ -351,4 +351,15 @@ Stylesheet: 960px以上のモニタで適用
     padding-bottom: 150px !important;
   }
 }
+
+@media (max-width: 575.98px) {
+  /******************************************************************
+
+Stylesheet: 578px以下のモニタで適用
+
+******************************************************************/
+  .figure_qes_td_sub{
+    font-size: 0.8em;
+  }
+}
 /*# sourceMappingURL=style.css.map */
