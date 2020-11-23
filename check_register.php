@@ -35,7 +35,7 @@ if (!empty($_POST)) {
     <link rel="stylesheet" href="css/style2.css">
 </head>
 
-<body>
+<body class="main-top">
     <div class="wrapper">
 
         <div class="head">
@@ -64,7 +64,7 @@ if (!empty($_POST)) {
                 </div>
 
                 <div>
-                    <a href=" register.php?action=rewrite" class="btn btn-danger">&laquo;&nbsp;書き直す</a> | <input type="submit" class="btn yellow-btn" value="登録する">
+                    <a href=" register.php?action=rewrite" class="btn btn-secondary">&laquo;&nbsp;書き直す</a> | <input type="submit" class="btn btn-info" value="登録する">
                 </div>
 
             </form>

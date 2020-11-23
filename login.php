@@ -63,7 +63,7 @@ if (!empty($_POST)) {
     <link rel="stylesheet" href="css/style2.css">
 </head>
 
-<body>
+<body class="main-top">
     <div class="wrapper">
 
         <div class="head">
@@ -105,7 +105,7 @@ if (!empty($_POST)) {
                 </div>
 
                 <div>
-                    <input type="submit" value="Log in" class="btn btn-light btn-block yellow-btn">
+                    <input type="submit" value="ログインする" class="btn btn-info btn-block">
                 </div>
             </form>
 
@@ -114,7 +114,7 @@ if (!empty($_POST)) {
             </div>
 
             <div>
-                <a href="index.php" class="btn btn-danger btn-block">戻る</a>
+                <a href="index.php" class="btn btn-secondary btn-block">戻る</a>
             </div>
 
         </div>

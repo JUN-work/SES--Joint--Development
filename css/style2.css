@@ -10,9 +10,10 @@ body {
     margin: 10px;
 }
 
-.yellow-btn {
-    background: #FFFF99;
+.main-top{  
+  background-image: url(/img/SE2_Top.png);
 }
+
 
 .wrapper {
     width: 700px;

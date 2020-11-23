@@ -60,7 +60,7 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
     <link rel="stylesheet" href="css/style2.css">
 </head>
 
-<body>
+<body class="main-top">
     <div class="wrapper">
 
         <div class="head">
@@ -104,7 +104,7 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
                 </div>
 
                 <div>
-                    <input type="submit" value="Submit" class="btn btn-light btn-block yellow-btn">
+                    <input type="submit" value="送信する" class="btn btn-info btn-block">
                 </div>
 
             </form>
@@ -114,7 +114,7 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
             </div>
 
             <div>
-                <a href="index.php" class="btn btn-danger btn-block">戻る</a>
+                <a href="index.php" class="btn btn-secondary btn-block">戻る</a>
             </div>
 
         </div>
